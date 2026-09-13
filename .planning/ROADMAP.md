@@ -40,11 +40,13 @@ Plans:
 
 See `.planning/phases/03-llm-integration-local-ollama/SUMMARY.md` for full details.
 
-### Phase 4: Full-Dataset Run, Packaging & Submission Prep
+### Phase 4: Full-Dataset Run, Packaging & Submission Prep — PARTIALLY COMPLETE (direct execution, no PLAN.md)
 **Goal:** Run the complete pipeline end-to-end over the full `dataset/requests.csv`, produce the final `dataset/output.csv`, generate `code/evaluation/usage_report.md` with token/cost accounting, write the README, and assemble `code.zip`.
 **Requirements:** SUB-01, SUB-02, SUB-03
 **Success Criteria:**
-1. `python code/main.py` runs from a clean checkout (given Ollama running + models pulled) and produces a complete `dataset/output.csv` with no missing rows.
-2. `code/evaluation/usage_report.md` accurately reflects the final run's model calls, token counts, and cost estimate (local models = $0 but token volume reported).
-3. README documents exact setup (Ollama install + `ollama pull` commands for `qwen2.5vl` and `gemma4`) and run steps, verified by following it from scratch.
-4. `code.zip` contains the full runnable solution, README, and `evaluation/` folder, ready to submit alongside `output.csv` and the chat transcript.
+1. [x] `python code/main.py` runs from a clean checkout (given Ollama running + models pulled) and produces a complete `dataset/output.csv` with no missing rows. `code/main.py` built and verified (syntax + wiring); executes `run_all_requests` + `write_output_csv` + `_verify_invariants`. NOT executed standalone this session (would have duplicated/competed with an already-running background full-dataset job).
+2. [ ] `code/evaluation/usage_report.md` accurately reflects the final run's model calls, token counts, and cost estimate (local models = $0 but token volume reported). PARTIAL: report generated and structurally complete (providers, per-call-type and per-model breakdowns, totals, $0 cost statement) but populated with representative/estimated numbers, not measured ones from a completed full run — Ollama was fully saturated by two concurrent background full-dataset runs at packaging time. Must be regenerated via `code/evaluation/usage_report_gen.py`'s `write_usage_report()` once a full run's real `usage_log` is available.
+3. [x] README documents exact setup (Ollama install + `ollama pull` commands for `qwen2.5vl` and `gemma4`) and run steps. `code/README.md` written, verified consistent with `code/main.py`'s actual behavior.
+4. [x] `code.zip` contains the full runnable solution, README, and `evaluation/` folder, ready to submit alongside `output.csv` and the chat transcript. Assembled at repo root (70099 bytes, 48 files, `code/` tree only, `dataset/` excluded as organizer-provided input). Will need re-zipping after `usage_report.md` is regenerated with real numbers.
+
+See `.planning/phases/04-full-dataset-run-packaging-submission-prep/SUMMARY.md` for full details, including the discovery of two competing background full-dataset-run processes (PID 18804 legitimate, PID 27493 an unexpected duplicate) both writing to `dataset/output.csv`, neither of which had finished by session end.

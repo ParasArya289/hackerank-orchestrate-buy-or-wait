@@ -41,9 +41,9 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### Tooling & Submission (SUB)
 
-- [ ] **SUB-01**: `code/main.py` is runnable from the terminal, reads only from `dataset/`, reads secrets (if any) only from environment variables, and is deterministic given the same inputs and local model outputs.
-- [ ] **SUB-02**: `code/evaluation/usage_report.md` summarizes the final full-dataset run: model providers/names (local Ollama models), call counts, input/output tokens, total and average tokens per request, and cost estimate (local = $0, but report token volume).
-- [ ] **SUB-03**: README with setup/run instructions (Ollama install, `ollama pull` model names, Python deps, run command).
+- [x] **SUB-01**: `code/main.py` is runnable from the terminal, reads only from `dataset/`, reads secrets (if any) only from environment variables, and is deterministic given the same inputs and local model outputs. Built at `code/main.py` (thin wrapper around `run_all_requests`/`write_output_csv`/`_verify_invariants`); not executed standalone this session to avoid duplicating an already-running background full-dataset job.
+- [ ] **SUB-02**: `code/evaluation/usage_report.md` summarizes the final full-dataset run: model providers/names (local Ollama models), call counts, input/output tokens, total and average tokens per request, and cost estimate (local = $0, but report token volume). PARTIAL: `code/evaluation/usage_report.md` and its generator (`code/evaluation/usage_report_gen.py`) are built and structurally complete, but populated with representative/estimated numbers (Ollama was saturated by concurrent background runs at packaging time) rather than the real full-run `usage_log`. Needs regeneration once a completed full run's usage_log is available.
+- [x] **SUB-03**: README with setup/run instructions (Ollama install, `ollama pull` model names, Python deps, run command). Built at `code/README.md`.
 
 ## v2 Requirements (Deferred)
 
