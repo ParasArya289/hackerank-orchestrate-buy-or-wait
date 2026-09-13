@@ -5,9 +5,9 @@
 ### Phase 1: Data Layer & Financial State Reconstruction
 **Goal:** Load every dataset table, join it per request/user, resolve blank-amount events via images, convert currencies, and produce a clean per-user "financial state" (classified events, recurrence detection, message/image amendments applied, conflicts resolved).
 **Requirements:** DATA-01, DATA-02, DATA-03, DATA-04, STATE-01, STATE-02, STATE-03, STATE-04, STATE-05
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
-- [ ] 01-01-PLAN.md — Load/join all dataset tables, currency conversion, blank-amount resolution stub (code/dataio)
+- [x] 01-01-PLAN.md — Load/join all dataset tables, currency conversion, blank-amount resolution stub (code/dataio)
 - [ ] 01-02-PLAN.md — Cash-state classification, recurrence detection, message/image amendments, conflict resolution (code/state)
 **Success Criteria:**
 1. Running the loader on the full dataset produces, for any given `request_id`, a resolved list of financial events in the user's home currency with correct cash-state classification (settled/pending/scheduled/excluded).

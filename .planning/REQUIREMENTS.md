@@ -6,10 +6,10 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### Data Loading & Joining (DATA)
 
-- [ ] **DATA-01**: Load all `dataset/*.csv` tables into typed structures (pandas DataFrames), keyed by `request_id`/`user_id`/`event_id`.
-- [ ] **DATA-02**: Join `financial_profiles`, `financial_events`, `request_payment_options`, `messages`, `images` to each `requests.csv` row via `user_id`/`request_id`.
-- [ ] **DATA-03**: Resolve blank-`amount` financial events by locating the linked image (`images.csv` where `related_event_id == event_id`) and extracting the amount via vision model; never treat blank as zero.
-- [ ] **DATA-04**: Convert every foreign-currency cash amount to the user's `home_currency` using the `exchange_rates.csv` row matching settlement date + currency pair.
+- [x] **DATA-01**: Load all `dataset/*.csv` tables into typed structures (pandas DataFrames), keyed by `request_id`/`user_id`/`event_id`.
+- [x] **DATA-02**: Join `financial_profiles`, `financial_events`, `request_payment_options`, `messages`, `images` to each `requests.csv` row via `user_id`/`request_id`.
+- [x] **DATA-03**: Resolve blank-`amount` financial events by locating the linked image (`images.csv` where `related_event_id == event_id`) and extracting the amount via vision model; never treat blank as zero.
+- [x] **DATA-04**: Convert every foreign-currency cash amount to the user's `home_currency` using the `exchange_rates.csv` row matching settlement date + currency pair.
 
 ### Financial State Reconstruction (STATE)
 
