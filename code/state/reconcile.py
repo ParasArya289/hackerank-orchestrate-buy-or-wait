@@ -142,16 +142,45 @@ def build_financial_state(request_id: str, tables: dict[str, pd.DataFrame] | Non
         amendment = extract_message_amendment(message_row)
         all_amendments.append(amendment)
         if amendment.event_id is not None and amendment.amendment_type != "none":
-            # An LLM-assisted classification only counts as an "explicit
-            # amendment" (resolve_conflict step 1, outright win) at
-            # high/medium confidence. A low-confidence LLM read still
-            # enters the conflict pool (steps 2-4 still apply) but can
-            # never itself short-circuit precedence -- this keeps a
-            # shaky model read from silently overriding a settled,
-            # deterministic record.
+            # An LLM-assisted classification NEVER counts as an "explicit
+            # amendment" (resolve_conflict step 1, outright win) --
+            # regardless of the model's self-reported confidence. A
+            # manual injection probe during Phase 3 development
+            # confirmed gemma4 will confidently ("high") extract a
+            # fabricated new_amount from adversarial instruction-like
+            # text embedded in message_text. Only a DETERMINISTIC
+            # regex/keyword match (extract_message_amendment's first
+            # pass) can ever be an explicit, step-1, outright-winning
+            # amendment.
             is_explicit = amendment.amendment_type in ("amend_amount", "cancel")
-            if amendment.llm_assisted and amendment.llm_confidence == "low":
+            if amendment.llm_assisted:
                 is_explicit = False
+
+                # CRITICAL: an LLM-derived signal must never be allowed
+                # to win purely by being the *only* candidate considered
+                # for this event_id (resolve_conflict's len==1
+                # short-circuit would otherwise apply it unconditionally
+                # -- exactly the injection path the manual probe
+                # exposed). Inject the event's own currently-recorded,
+                # settled value as a competing baseline candidate so an
+                # uncorroborated model read must actually win step 3/4
+                # of resolve_conflict's precedence (settled beats
+                # estimate; financially-safer wins remaining ties) on
+                # its merits, never by default.
+                existing_matches = events[events["event_id"] == amendment.event_id]
+                if len(existing_matches) > 0:
+                    existing_row = existing_matches.iloc[0]
+                    amendments_by_event.setdefault(amendment.event_id, []).append(
+                        {
+                            "amendment": None,
+                            "value": existing_row.get("amount_home_currency"),
+                            "source_type": "settled" if existing_row.get("status") == "settled" else existing_row.get("status"),
+                            "record_date": existing_row.get("settlement_date") or existing_row.get("event_date"),
+                            "is_explicit_amendment": False,
+                            "direction": existing_row.get("direction"),
+                        }
+                    )
+
             amendments_by_event.setdefault(amendment.event_id, []).append(
                 {
                     "amendment": amendment,
@@ -183,6 +212,14 @@ def build_financial_state(request_id: str, tables: dict[str, pd.DataFrame] | Non
     applied: list[Amendment] = []
     for event_id, candidates in amendments_by_event.items():
         winner = resolve_conflict(candidates)
+        if winner["amendment"] is None:
+            # The synthetic "keep the existing recorded value" baseline
+            # candidate won -- an uncorroborated LLM-derived amendment
+            # lost on the merits (see the baseline-injection comment
+            # above), so no mutation is applied for this event_id at
+            # all. This is the safety net verified by
+            # code/tests/test_llm_injection.py.
+            continue
         events = _apply_amendment(events, winner["amendment"])
         applied.append(winner["amendment"])
 
