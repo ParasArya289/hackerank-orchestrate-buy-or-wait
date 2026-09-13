@@ -1,4 +1,4 @@
-"""Single-request output-row assembly (Phase 2 Plan 03).
+"""Single-request output-row assembly (Phase 2 Plan 03, Phase 3 LLM explanation).
 
 build_output_row(request_id, tables=None) wires together the whole
 Phase 2 pipeline for one request_id:
@@ -31,6 +31,7 @@ import pandas as pd
 
 from code.dataio.join import build_request_bundle
 from code.forecast.balance import project_balance
+from code.llm.explain import generate_decision_explanation
 from code.forecast.safety import (
     compute_amount_safe_to_pay,
     compute_earliest_date_for_full_payment,
@@ -179,17 +180,23 @@ def build_output_row(request_id: str, tables: "dict | None" = None) -> dict:
     amount_safe_to_pay_rounded = round(float(amount_safe_to_pay), 2)
     amount_safe_to_pay_rounded = max(0.0, min(amount_safe_to_pay_rounded, requested_amount))
 
-    # (13): deterministic, grounded decision_explanation placeholder.
-    # PHASE 3 EXTENSION POINT: replace with gemma4-generated prose grounded in these same facts
+    # (13): decision_explanation -- gemma4-generated prose grounded ONLY
+    # in the facts already computed above. generate_decision_explanation
+    # never invents a number: it falls back to a deterministic template
+    # if the model call fails or its response introduces an ungrounded
+    # number (see code.llm.explain's anti-hallucination guard).
     home_currency = bundle.profile["home_currency"]
-    method_label = selected_plan.method.replace("_", " ").title()
-    decision_explanation = (
-        f"{method_label} recommended: safe amount is {amount_safe_to_pay_rounded} {home_currency}."
+    decision_explanation = generate_decision_explanation(
+        requested_amount=requested_amount,
+        amount_safe_to_pay=amount_safe_to_pay_rounded,
+        affordability_status=affordability_status,
+        recommended_payment_method=selected_plan.method,
+        payment_plan=payment_plan,
+        earliest_date_for_full_payment=earliest_date_str,
+        spending_changes_needed=spending_changes_str,
+        minimum_balance_to_keep=minimum_balance_to_keep,
+        home_currency=home_currency,
     )
-    if selected_plan.requires_spending_changes and spending_changes:
-        decision_explanation += f" Requires stopping/reducing: {spending_changes_str}."
-    elif spending_changes and spending_changes_str != "none" and selected_plan.method != "not_recommended":
-        decision_explanation += f" Available spending changes: {spending_changes_str}."
 
     return {
         "request_id": request_id,
