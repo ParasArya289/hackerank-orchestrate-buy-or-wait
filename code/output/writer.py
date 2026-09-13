@@ -37,21 +37,31 @@ ALLOWED_STATUSES = {"affordable_now", "affordable_with_plan", "affordable_later"
 ALLOWED_METHODS = {"full_payment", "partial_payment", "installments", "wait", "not_recommended"}
 
 
-def run_all_requests(dataset_dir: str = "dataset") -> list:
+def run_all_requests(dataset_dir: str = "dataset", progress_callback=None) -> list:
     """Load the full dataset once and build one output row per
     request_id in dataset/requests.csv, in file order. Re-raises any
     per-request failure with the offending request_id attached --
-    never silently skips a row."""
+    never silently skips a row.
+
+    `progress_callback`, if supplied, is called after each request as
+    progress_callback(index, total, request_id, row) -- purely an
+    observability hook (e.g. Phase 3's local-LLM full run, where each
+    row can take tens of seconds); never changes what rows are built or
+    their order.
+    """
     tables = load_all(dataset_dir)
     request_ids = tables["requests"]["request_id"].tolist()
+    total = len(request_ids)
 
     rows = []
-    for request_id in request_ids:
+    for i, request_id in enumerate(request_ids, start=1):
         try:
             row = build_output_row(request_id, tables=tables)
         except Exception as e:
             raise RuntimeError(f"build_output_row failed for {request_id}: {e}") from e
         rows.append(row)
+        if progress_callback is not None:
+            progress_callback(i, total, request_id, row)
     return rows
 
 
