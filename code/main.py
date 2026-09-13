@@ -18,8 +18,16 @@ environment variable to point at a non-default Ollama host.
 
 from __future__ import annotations
 
+import os
 import sys
 import time
+
+# Allow `python3 code/main.py` (run as a script, not a module) to resolve
+# the `code.*` absolute imports below by putting the repo root -- the
+# parent of this file's directory -- on sys.path. `python3 -m code.main`
+# already works without this since Python puts the repo root on sys.path
+# itself when running a package's submodule that way.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from code.output.writer import _verify_invariants, run_all_requests, write_output_csv
 

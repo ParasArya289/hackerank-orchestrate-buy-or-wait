@@ -1,251 +1,251 @@
 request_id,amount_safe_to_pay,affordability_status,recommended_payment_method,payment_plan,earliest_date_for_full_payment,spending_changes_needed,decision_explanation
-request_26,15656000.0,affordable_now,full_payment,2025-08-03:15656000,2025-08-03,stop:event_2322,Full Payment recommended: safe amount is 15656000.0 IDR. Available spending changes: stop:event_2322.
-request_27,6670.0,affordable_now,full_payment,2026-07-05:6670,2026-07-05,stop:event_2412,Full Payment recommended: safe amount is 6670.0 ZAR. Available spending changes: stop:event_2412.
-request_28,0.0,not_affordable,not_recommended,none,,stop:event_2512|stop:event_2513,Not Recommended recommended: safe amount is 0.0 EUR.
+request_26,15656000.0,affordable_now,full_payment,2025-08-03:15656000,2025-08-03,none,Full Payment recommended: safe amount is 15656000.0 IDR.
+request_27,6670.0,affordable_now,full_payment,2026-07-05:6670,2026-07-05,none,Full Payment recommended: safe amount is 6670.0 ZAR.
+request_28,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
 request_29,51524.0,affordable_now,full_payment,2025-11-04:51524,2025-11-04,none,Full Payment recommended: safe amount is 51524.0 ZAR.
-request_30,775.2,affordable_with_plan,installments,2026-04-06:268.74|2026-05-06:268.74|2026-06-05:268.74,2026-04-06,stop:event_2694,Installments recommended: safe amount is 775.2 USD. Available spending changes: stop:event_2694.
-request_31,5217851.14,affordable_later,wait,2024-10-14:18164000,2024-10-14,reduce_to:event_2830:323950.0,Wait recommended: safe amount is 5217851.14 IDR. Available spending changes: reduce_to:event_2830:323950.0.
-request_32,0.0,not_affordable,not_recommended,none,,stop:event_2863,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_33,57251.98,affordable_later,wait,2026-01-14:118000,2026-01-14,reduce_to:event_2969:2060.0|stop:event_2967|stop:event_2966,Wait recommended: safe amount is 57251.98 INR. Available spending changes: reduce_to:event_2969:2060.0|stop:event_2967|stop:event_2966.
-request_34,129400.0,affordable_now,full_payment,2024-12-04:129400,2024-12-04,reduce_to:event_3123:3295.0|stop:event_3085|stop:event_3084,Full Payment recommended: safe amount is 129400.0 INR. Available spending changes: reduce_to:event_3123:3295.0|stop:event_3085|stop:event_3084.
+request_30,775.2,affordable_with_plan,installments,2026-04-06:268.74|2026-05-06:268.74|2026-06-05:268.74,2026-04-06,none,Installments recommended: safe amount is 775.2 USD.
+request_31,5217851.14,affordable_later,wait,2024-10-14:18164000,2024-10-14,none,Wait recommended: safe amount is 5217851.14 IDR.
+request_32,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_33,57251.98,affordable_later,wait,2026-01-14:118000,2026-01-14,none,Wait recommended: safe amount is 57251.98 INR.
+request_34,129400.0,affordable_now,full_payment,2024-12-04:129400,2024-12-04,none,Full Payment recommended: safe amount is 129400.0 INR.
 request_35,56595.22,affordable_later,wait,2025-12-16:212000,2025-12-16,none,Wait recommended: safe amount is 56595.22 INR.
-request_36,870.81,affordable_later,wait,2026-09-13:3954,2026-09-13,reduce_to:event_3261:36.0,Wait recommended: safe amount is 870.81 USD. Available spending changes: reduce_to:event_3261:36.0.
-request_37,0.0,not_affordable,not_recommended,none,,reduce_to:event_3340:203300.0,Not Recommended recommended: safe amount is 0.0 IDR.
-request_38,269.77,affordable_later,wait,2025-09-13:971.3,2025-09-13,stop:event_3448,Wait recommended: safe amount is 269.77 EUR. Available spending changes: stop:event_3448.
-request_39,166116.17,affordable_later,wait,2026-04-14:208600,2026-04-14,reduce_to:event_3529:2790.0,Wait recommended: safe amount is 166116.17 INR. Available spending changes: reduce_to:event_3529:2790.0.
+request_36,870.81,affordable_later,wait,2026-09-13:3954,2026-09-13,none,Wait recommended: safe amount is 870.81 USD.
+request_37,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 IDR.
+request_38,269.77,affordable_later,wait,2025-09-13:971.3,2025-09-13,none,Wait recommended: safe amount is 269.77 EUR.
+request_39,166116.17,affordable_later,wait,2026-04-14:208600,2026-04-14,none,Wait recommended: safe amount is 166116.17 INR.
 request_40,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
-request_41,15038891.32,affordable_later,wait,2025-12-14:38760000,2025-12-14,reduce_to:event_3749:434150.0,Wait recommended: safe amount is 15038891.32 IDR. Available spending changes: reduce_to:event_3749:434150.0.
-request_42,0.0,not_affordable,not_recommended,none,,reduce_to:event_3956:2695.0,Not Recommended recommended: safe amount is 0.0 INR.
-request_43,9835603.73,affordable_later,wait,2024-10-14:43339000,2024-10-14,stop:event_3982,Wait recommended: safe amount is 9835603.73 IDR. Available spending changes: stop:event_3982.
-request_44,0.0,not_affordable,not_recommended,none,,reduce_to:event_4113:2020.0,Not Recommended recommended: safe amount is 0.0 INR.
-request_45,5219332.61,affordable_later,wait,2026-09-13:21983000,2026-09-13,stop:event_4144,Wait recommended: safe amount is 5219332.61 IDR. Available spending changes: stop:event_4144.
-request_46,49020.39,affordable_with_plan,partial_payment,2024-12-03:49020.39|2024-12-16:429.61,2024-12-16,stop:event_4223|stop:event_4224,Partial Payment recommended: safe amount is 49020.39 INR. Available spending changes: stop:event_4223|stop:event_4224.
-request_47,38114000.0,affordable_now,full_payment,2025-05-05:38114000,2025-05-05,reduce_to:event_4342:605150.0|stop:event_4341|stop:event_4339,Full Payment recommended: safe amount is 38114000.0 IDR. Available spending changes: reduce_to:event_4342:605150.0|stop:event_4341|stop:event_4339.
-request_48,45700.0,affordable_now,full_payment,2026-07-25:45700,2026-07-25,reduce_to:event_4452:925.0|stop:event_4451,Full Payment recommended: safe amount is 45700.0 INR. Available spending changes: reduce_to:event_4452:925.0|stop:event_4451.
-request_49,17273727.76,affordable_with_plan,installments,2024-03-18:11902106.67|2024-04-18:11902106.67|2024-05-19:11902106.67,2024-04-17,reduce_to:event_4569:368600.0,Installments recommended: safe amount is 17273727.76 IDR. Available spending changes: reduce_to:event_4569:368600.0.
-request_50,0.0,not_affordable,not_recommended,none,,reduce_to:event_4680:1928.0|stop:event_4679,Not Recommended recommended: safe amount is 0.0 INR.
+request_41,15038891.32,affordable_later,wait,2025-12-14:38760000,2025-12-14,none,Wait recommended: safe amount is 15038891.32 IDR.
+request_42,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_43,9835603.73,affordable_later,wait,2024-10-14:43339000,2024-10-14,none,Wait recommended: safe amount is 9835603.73 IDR.
+request_44,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_45,5219332.61,affordable_later,wait,2026-09-13:21983000,2026-09-13,none,Wait recommended: safe amount is 5219332.61 IDR.
+request_46,49020.39,affordable_with_plan,partial_payment,2024-12-03:49020.39|2024-12-16:429.61,2024-12-16,none,Partial Payment recommended: safe amount is 49020.39 INR.
+request_47,38114000.0,affordable_now,full_payment,2025-05-05:38114000,2025-05-05,none,Full Payment recommended: safe amount is 38114000.0 IDR.
+request_48,45700.0,affordable_now,full_payment,2026-07-25:45700,2026-07-25,none,Full Payment recommended: safe amount is 45700.0 INR.
+request_49,17273727.76,affordable_with_plan,installments,2024-03-18:11902106.67|2024-04-18:11902106.67|2024-05-19:11902106.67,2024-04-17,none,Installments recommended: safe amount is 17273727.76 IDR.
+request_50,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
 request_51,2191000.0,affordable_now,full_payment,2026-01-03:2191000,2026-01-03,none,Full Payment recommended: safe amount is 2191000.0 IDR.
-request_52,26530.0,affordable_later,wait,2024-06-14:28870,2024-06-14,reduce_to:event_4890:1250.0|stop:event_4858,Wait recommended: safe amount is 26530.0 INR. Available spending changes: reduce_to:event_4890:1250.0|stop:event_4858.
-request_53,625.93,affordable_with_plan,installments,2025-11-21:589.06|2025-12-19:589.06|2026-01-16:589.06,2025-12-14,reduce_to:event_4992:44.5|stop:event_4925,Installments recommended: safe amount is 625.93 USD. Available spending changes: reduce_to:event_4992:44.5|stop:event_4925.
-request_54,9501.44,not_affordable,not_recommended,none,,stop:event_5024,Not Recommended recommended: safe amount is 9501.44 ZAR.
-request_55,143219.94,affordable_with_plan,installments,2026-06-11:75781.33|2026-07-12:75781.33|2026-08-12:75781.33,2026-06-14,reduce_to:event_5103:2536.0|stop:event_5101|stop:event_5102,Installments recommended: safe amount is 143219.94 INR. Available spending changes: reduce_to:event_5103:2536.0|stop:event_5101|stop:event_5102.
-request_56,669.29,affordable_with_plan,installments,2025-02-03:458.42|2025-03-03:458.42,,reduce_to:event_5210:24.0|stop:event_5211,Installments recommended: safe amount is 669.29 USD. Available spending changes: reduce_to:event_5210:24.0|stop:event_5211.
-request_57,14661.03,affordable_later,wait,2026-06-13:61446,2026-06-13,stop:event_5282|stop:event_5281,Wait recommended: safe amount is 14661.03 ZAR. Available spending changes: stop:event_5282|stop:event_5281.
-request_58,0.0,not_affordable,not_recommended,none,,stop:event_5358|stop:event_5357,Not Recommended recommended: safe amount is 0.0 IDR.
-request_59,140600.0,affordable_with_plan,installments,2025-05-07:48741.33|2025-06-04:48741.33|2025-07-02:48741.33,2025-05-04,reduce_to:event_5537:3930.0|stop:event_5473|stop:event_5471,Installments recommended: safe amount is 140600.0 INR. Available spending changes: reduce_to:event_5537:3930.0|stop:event_5473|stop:event_5471.
-request_60,0.0,not_affordable,not_recommended,none,,stop:event_5575|stop:event_5574,Not Recommended recommended: safe amount is 0.0 USD.
-request_61,29062.0,affordable_with_plan,installments,2024-03-17:10074.83|2024-04-17:10074.83|2024-05-18:10074.83,2024-03-03,stop:event_5683,Installments recommended: safe amount is 29062.0 ZAR. Available spending changes: stop:event_5683.
-request_62,404.23,affordable_now,full_payment,2025-08-05:404.23,2025-08-05,reduce_to:event_5750:21.0|stop:event_5749,Full Payment recommended: safe amount is 404.23 USD. Available spending changes: reduce_to:event_5750:21.0|stop:event_5749.
-request_63,0.0,not_affordable,not_recommended,none,,reduce_to:event_5828:3184.0|stop:event_5827,Not Recommended recommended: safe amount is 0.0 INR.
-request_64,0.0,affordable_with_plan,installments,2024-06-11:22082.67|2024-07-12:22082.67|2024-08-12:22082.67,,reduce_to:event_5951:950.0|reduce_to:event_5949:530.0,Installments recommended: safe amount is 0.0 INR. Available spending changes: reduce_to:event_5951:950.0|reduce_to:event_5949:530.0.
-request_65,0.0,not_affordable,not_recommended,none,,reduce_to:event_6074:369.6|reduce_to:event_6116:463.1,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_52,26530.0,affordable_later,wait,2024-06-14:28870,2024-06-14,none,Wait recommended: safe amount is 26530.0 INR.
+request_53,625.93,affordable_with_plan,installments,2025-11-21:589.06|2025-12-19:589.06|2026-01-16:589.06,2025-12-14,none,Installments recommended: safe amount is 625.93 USD.
+request_54,9501.44,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 9501.44 ZAR.
+request_55,143219.94,affordable_with_plan,installments,2026-06-11:75781.33|2026-07-12:75781.33|2026-08-12:75781.33,2026-06-14,none,Installments recommended: safe amount is 143219.94 INR.
+request_56,669.29,affordable_with_plan,installments,2025-02-03:458.42|2025-03-03:458.42,,none,Installments recommended: safe amount is 669.29 USD.
+request_57,14661.03,affordable_later,wait,2026-06-13:61446,2026-06-13,none,Wait recommended: safe amount is 14661.03 ZAR.
+request_58,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 IDR.
+request_59,140600.0,affordable_with_plan,installments,2025-05-07:48741.33|2025-06-04:48741.33|2025-07-02:48741.33,2025-05-04,none,Installments recommended: safe amount is 140600.0 INR.
+request_60,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_61,29062.0,affordable_with_plan,installments,2024-03-17:10074.83|2024-04-17:10074.83|2024-05-18:10074.83,2024-03-03,none,Installments recommended: safe amount is 29062.0 ZAR.
+request_62,404.23,affordable_now,full_payment,2025-08-05:404.23,2025-08-05,none,Full Payment recommended: safe amount is 404.23 USD.
+request_63,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_64,0.0,affordable_with_plan,installments,2024-06-11:22082.67|2024-07-12:22082.67|2024-08-12:22082.67,,none,Installments recommended: safe amount is 0.0 INR.
+request_65,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
 request_66,22200.0,affordable_now,full_payment,2026-04-03:22200,2026-04-03,none,Full Payment recommended: safe amount is 22200.0 INR.
-request_67,602.6,affordable_later,wait,2024-10-14:2094,2024-10-14,reduce_to:event_6224:35.0|reduce_to:event_6223:20.5,Wait recommended: safe amount is 602.6 USD. Available spending changes: reduce_to:event_6224:35.0|reduce_to:event_6223:20.5.
-request_68,1545.58,affordable_with_plan,installments,2025-02-14:725.09|2025-03-14:725.09|2025-04-11:725.09,2025-02-22,reduce_to:event_6331:24.8|stop:event_6330,Installments recommended: safe amount is 1545.58 USD. Available spending changes: reduce_to:event_6331:24.8|stop:event_6330.
-request_69,529.1,affordable_now,full_payment,2026-01-04:529.1,2026-01-04,reduce_to:event_6407:16.4|stop:event_6405,Full Payment recommended: safe amount is 529.1 EUR. Available spending changes: reduce_to:event_6407:16.4|stop:event_6405.
-request_70,49509.35,affordable_later,wait,2025-02-16:243900,2025-02-16,stop:event_6498,Wait recommended: safe amount is 49509.35 INR. Available spending changes: stop:event_6498.
-request_71,2723203.49,affordable_later,wait,2025-07-17:21451000,2025-07-17,stop:event_6570|stop:event_6569,Wait recommended: safe amount is 2723203.49 IDR. Available spending changes: stop:event_6570|stop:event_6569.
-request_72,0.0,not_affordable,not_recommended,none,,stop:event_6682,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_73,71400.0,affordable_now,full_payment,2023-01-20:71400,2023-01-20,reduce_to:event_6789:1425.0|stop:event_6790,Full Payment recommended: safe amount is 71400.0 INR. Available spending changes: reduce_to:event_6789:1425.0|stop:event_6790.
-request_74,5010.0,affordable_now,full_payment,2025-08-04:5010,2025-08-04,stop:event_6893|stop:event_6892,Full Payment recommended: safe amount is 5010.0 ZAR. Available spending changes: stop:event_6893|stop:event_6892.
-request_75,28270.0,affordable_with_plan,installments,2026-04-09:9800.27|2026-05-09:9800.27|2026-06-08:9800.27,2026-04-06,reduce_to:event_6961:419.76|stop:event_6960,Installments recommended: safe amount is 28270.0 ZAR. Available spending changes: reduce_to:event_6961:419.76|stop:event_6960.
-request_76,0.0,not_affordable,not_recommended,none,,reduce_to:event_7037:35.0|stop:event_7036|stop:event_7035,Not Recommended recommended: safe amount is 0.0 USD.
-request_77,60700.0,affordable_now,full_payment,2025-11-05:60700,2025-11-05,stop:event_7143,Full Payment recommended: safe amount is 60700.0 INR. Available spending changes: stop:event_7143.
-request_78,50200.0,affordable_now,full_payment,2025-10-02:50200,2025-10-02,reduce_to:event_7225:1480.0|stop:event_7224,Full Payment recommended: safe amount is 50200.0 INR. Available spending changes: reduce_to:event_7225:1480.0|stop:event_7224.
-request_79,832.75,not_affordable,not_recommended,none,,stop:event_7345|stop:event_7344,Not Recommended recommended: safe amount is 832.75 EUR.
-request_80,0.0,not_affordable,not_recommended,none,,reduce_to:event_7534:2650.0|stop:event_7466|stop:event_7467,Not Recommended recommended: safe amount is 0.0 INR.
-request_81,2076.0,affordable_now,full_payment,2026-07-03:2076,2026-07-03,reduce_to:event_7636:37.5|stop:event_7569,Full Payment recommended: safe amount is 2076.0 USD. Available spending changes: reduce_to:event_7636:37.5|stop:event_7569.
+request_67,602.6,affordable_later,wait,2024-10-14:2094,2024-10-14,none,Wait recommended: safe amount is 602.6 USD.
+request_68,1545.58,affordable_with_plan,installments,2025-02-14:725.09|2025-03-14:725.09|2025-04-11:725.09,2025-02-22,none,Installments recommended: safe amount is 1545.58 USD.
+request_69,529.1,affordable_now,full_payment,2026-01-04:529.1,2026-01-04,none,Full Payment recommended: safe amount is 529.1 EUR.
+request_70,49509.35,affordable_later,wait,2025-02-16:243900,2025-02-16,none,Wait recommended: safe amount is 49509.35 INR.
+request_71,2723203.49,affordable_later,wait,2025-07-17:21451000,2025-07-17,none,Wait recommended: safe amount is 2723203.49 IDR.
+request_72,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_73,71400.0,affordable_now,full_payment,2023-01-20:71400,2023-01-20,none,Full Payment recommended: safe amount is 71400.0 INR.
+request_74,5010.0,affordable_now,full_payment,2025-08-04:5010,2025-08-04,none,Full Payment recommended: safe amount is 5010.0 ZAR.
+request_75,28270.0,affordable_with_plan,installments,2026-04-09:9800.27|2026-05-09:9800.27|2026-06-08:9800.27,2026-04-06,none,Installments recommended: safe amount is 28270.0 ZAR.
+request_76,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_77,60700.0,affordable_now,full_payment,2025-11-05:60700,2025-11-05,none,Full Payment recommended: safe amount is 60700.0 INR.
+request_78,50200.0,affordable_now,full_payment,2025-10-02:50200,2025-10-02,none,Full Payment recommended: safe amount is 50200.0 INR.
+request_79,832.75,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 832.75 EUR.
+request_80,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_81,2076.0,affordable_now,full_payment,2026-07-03:2076,2026-07-03,none,Full Payment recommended: safe amount is 2076.0 USD.
 request_82,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
-request_83,0.0,not_affordable,not_recommended,none,,reduce_to:event_7776:545.0|stop:event_7777,Not Recommended recommended: safe amount is 0.0 INR.
-request_84,43834.94,affordable_later,wait,2026-05-14:95400,2026-05-14,reduce_to:event_7940:1730.0|stop:event_7857|stop:event_7856,Wait recommended: safe amount is 43834.94 INR. Available spending changes: reduce_to:event_7940:1730.0|stop:event_7857|stop:event_7856.
-request_85,1055063.57,not_affordable,not_recommended,none,,reduce_to:event_7977:148200.0|stop:event_7976|stop:event_7975,Not Recommended recommended: safe amount is 1055063.57 IDR.
-request_86,46300.0,affordable_now,full_payment,2025-08-03:46300,2025-08-03,reduce_to:event_8084:2360.0|stop:event_8083,Full Payment recommended: safe amount is 46300.0 INR. Available spending changes: reduce_to:event_8084:2360.0|stop:event_8083.
+request_83,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_84,43834.94,affordable_later,wait,2026-05-14:95400,2026-05-14,none,Wait recommended: safe amount is 43834.94 INR.
+request_85,1055063.57,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 1055063.57 IDR.
+request_86,46300.0,affordable_now,full_payment,2025-08-03:46300,2025-08-03,none,Full Payment recommended: safe amount is 46300.0 INR.
 request_87,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
-request_88,11959.79,affordable_with_plan,installments,2024-06-14:9045.23|2024-07-15:9045.23|2024-08-15:9045.23,2024-06-14,stop:event_8268,Installments recommended: safe amount is 11959.79 ZAR. Available spending changes: stop:event_8268.
-request_89,10134364.39,affordable_with_plan,installments,2025-11-18:4768746.67|2025-12-16:4768746.67|2026-01-13:4768746.67,2025-11-14,reduce_to:event_8337:266760.0|stop:event_8335|stop:event_8336,Installments recommended: safe amount is 10134364.39 IDR. Available spending changes: reduce_to:event_8337:266760.0|stop:event_8335|stop:event_8336.
-request_90,2560.0,affordable_now,full_payment,2026-07-06:2560,2026-07-06,reduce_to:event_8438:193.6|stop:event_8437,Full Payment recommended: safe amount is 2560.0 ZAR. Available spending changes: reduce_to:event_8438:193.6|stop:event_8437.
-request_91,761.93,affordable_later,wait,2024-11-13:1927.2,2024-11-13,reduce_to:event_8511:43.2|stop:event_8510,Wait recommended: safe amount is 761.93 EUR. Available spending changes: reduce_to:event_8511:43.2|stop:event_8510.
-request_92,3492.71,not_affordable,not_recommended,none,,reduce_to:event_8620:558.8|stop:event_8621,Not Recommended recommended: safe amount is 3492.71 ZAR.
-request_93,1729.2,affordable_now,full_payment,2026-04-07:1729.2,2026-04-07,stop:event_8691|stop:event_8690,Full Payment recommended: safe amount is 1729.2 USD. Available spending changes: stop:event_8691|stop:event_8690.
-request_94,572.0,affordable_now,full_payment,2024-12-04:572,2024-12-04,stop:event_8765|stop:event_8764,Full Payment recommended: safe amount is 572.0 EUR. Available spending changes: stop:event_8765|stop:event_8764.
+request_88,11959.79,affordable_with_plan,installments,2024-06-14:9045.23|2024-07-15:9045.23|2024-08-15:9045.23,2024-06-14,none,Installments recommended: safe amount is 11959.79 ZAR.
+request_89,10134364.39,affordable_with_plan,installments,2025-11-18:4768746.67|2025-12-16:4768746.67|2026-01-13:4768746.67,2025-11-14,none,Installments recommended: safe amount is 10134364.39 IDR.
+request_90,2560.0,affordable_now,full_payment,2026-07-06:2560,2026-07-06,none,Full Payment recommended: safe amount is 2560.0 ZAR.
+request_91,761.93,affordable_later,wait,2024-11-13:1927.2,2024-11-13,none,Wait recommended: safe amount is 761.93 EUR.
+request_92,3492.71,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 3492.71 ZAR.
+request_93,1729.2,affordable_now,full_payment,2026-04-07:1729.2,2026-04-07,none,Full Payment recommended: safe amount is 1729.2 USD.
+request_94,572.0,affordable_now,full_payment,2024-12-04:572,2024-12-04,none,Full Payment recommended: safe amount is 572.0 EUR.
 request_95,46409.37,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 46409.37 INR.
-request_96,22538.4,affordable_with_plan,installments,2026-01-10:31269.33|2026-02-09:31269.33|2026-03-11:31269.33,,reduce_to:event_8980:1610.0|stop:event_8914,Installments recommended: safe amount is 22538.4 INR. Available spending changes: reduce_to:event_8980:1610.0|stop:event_8914.
-request_97,2944.84,affordable_with_plan,installments,2024-03-19:8145.28|2024-04-19:8145.28|2024-05-20:8145.28,2024-04-17,stop:event_9006,Installments recommended: safe amount is 2944.84 ZAR. Available spending changes: stop:event_9006.
-request_98,13017.04,affordable_later,wait,2025-08-14:27148,2025-08-14,reduce_to:event_9079:620.4|stop:event_9077|stop:event_9076,Wait recommended: safe amount is 13017.04 ZAR. Available spending changes: reduce_to:event_9079:620.4|stop:event_9077|stop:event_9076.
-request_99,16863.65,affordable_with_plan,full_payment,2026-07-04:18062,2026-08-14,stop:event_9188,Full Payment recommended: safe amount is 16863.65 ZAR. Requires stopping/reducing: stop:event_9188.
-request_100,19699.91,affordable_with_plan,installments,2024-06-13:12866.19|2024-07-14:12866.19|2024-08-14:12866.19,,stop:event_9267|stop:event_9268,Installments recommended: safe amount is 19699.91 ZAR. Available spending changes: stop:event_9267|stop:event_9268.
-request_101,143500.0,affordable_now,full_payment,2025-11-03:143500,2025-11-03,reduce_to:event_9418:4210.0|reduce_to:event_9377:2660.0|stop:event_9378,Full Payment recommended: safe amount is 143500.0 INR. Available spending changes: reduce_to:event_9418:4210.0|reduce_to:event_9377:2660.0|stop:event_9378.
-request_102,1716.0,affordable_with_plan,installments,2026-04-05:594.88|2026-05-05:594.88|2026-06-04:594.88,2026-04-05,reduce_to:event_9457:24.0|stop:event_9456|stop:event_9455,Installments recommended: safe amount is 1716.0 EUR. Available spending changes: reduce_to:event_9457:24.0|stop:event_9456|stop:event_9455.
-request_103,20676.29,not_affordable,not_recommended,none,,reduce_to:event_9530:3110.0|reduce_to:event_9529:2070.0|reduce_to:event_9594:2255.0,Not Recommended recommended: safe amount is 20676.29 INR.
-request_104,0.0,not_affordable,not_recommended,none,,stop:event_9639,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_105,53500.0,affordable_now,full_payment,2026-06-08:53500,2026-06-08,reduce_to:event_9720:1632.0|reduce_to:event_9721:1720.0,Full Payment recommended: safe amount is 53500.0 INR. Available spending changes: reduce_to:event_9720:1632.0|reduce_to:event_9721:1720.0.
+request_96,22538.4,affordable_with_plan,installments,2026-01-10:31269.33|2026-02-09:31269.33|2026-03-11:31269.33,,none,Installments recommended: safe amount is 22538.4 INR.
+request_97,2944.84,affordable_with_plan,installments,2024-03-19:8145.28|2024-04-19:8145.28|2024-05-20:8145.28,2024-04-17,none,Installments recommended: safe amount is 2944.84 ZAR.
+request_98,13017.04,affordable_later,wait,2025-08-14:27148,2025-08-14,none,Wait recommended: safe amount is 13017.04 ZAR.
+request_99,16863.65,affordable_with_plan,full_payment,2026-07-04:18062,2026-08-14,stop:event_9188,Full Payment recommended: safe amount is 16863.65 ZAR. Requires spending changes: stop:event_9188.
+request_100,19699.91,affordable_with_plan,installments,2024-06-13:12866.19|2024-07-14:12866.19|2024-08-14:12866.19,,none,Installments recommended: safe amount is 19699.91 ZAR.
+request_101,143500.0,affordable_now,full_payment,2025-11-03:143500,2025-11-03,none,Full Payment recommended: safe amount is 143500.0 INR.
+request_102,1716.0,affordable_with_plan,installments,2026-04-05:594.88|2026-05-05:594.88|2026-06-04:594.88,2026-04-05,none,Installments recommended: safe amount is 1716.0 EUR.
+request_103,20676.29,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 20676.29 INR.
+request_104,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_105,53500.0,affordable_now,full_payment,2026-06-08:53500,2026-06-08,none,Full Payment recommended: safe amount is 53500.0 INR.
 request_106,542.6,affordable_later,wait,2025-01-16:2207.7,2025-01-16,none,Wait recommended: safe amount is 542.6 EUR.
-request_107,0.0,affordable_with_plan,installments,2025-05-08:878.59|2025-06-05:878.59|2025-07-03:878.59,,stop:event_9895|stop:event_9894,Installments recommended: safe amount is 0.0 EUR. Available spending changes: stop:event_9895|stop:event_9894.
-request_108,0.0,not_affordable,not_recommended,none,,reduce_to:event_9994:421.3,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_109,676.18,affordable_with_plan,installments,2024-03-18:645.98|2024-04-18:645.98|2024-05-19:645.98,2024-04-17,stop:event_10081|stop:event_10080,Installments recommended: safe amount is 676.18 EUR. Available spending changes: stop:event_10081|stop:event_10080.
-request_110,22352.0,affordable_with_plan,installments,2025-08-06:7748.69|2025-09-03:7748.69|2025-10-01:7748.69,2025-08-06,stop:event_10198|reduce_to:event_10199:193.6|stop:event_10197,Installments recommended: safe amount is 22352.0 ZAR. Available spending changes: stop:event_10198|reduce_to:event_10199:193.6|stop:event_10197.
-request_111,16625000.0,affordable_now,full_payment,2026-04-03:16625000,2026-04-03,stop:event_10264,Full Payment recommended: safe amount is 16625000.0 IDR. Available spending changes: stop:event_10264.
-request_112,0.0,not_affordable,not_recommended,none,,stop:event_10333|stop:event_10334,Not Recommended recommended: safe amount is 0.0 EUR.
-request_113,36500.0,affordable_now,full_payment,2026-09-04:36500,2026-09-04,reduce_to:event_10438:1565.0|reduce_to:event_10440:1490.0,Full Payment recommended: safe amount is 36500.0 INR. Available spending changes: reduce_to:event_10438:1565.0|reduce_to:event_10440:1490.0.
-request_114,0.0,not_affordable,not_recommended,none,,reduce_to:event_10561:1890.0|stop:event_10559|stop:event_10558,Not Recommended recommended: safe amount is 0.0 INR.
-request_115,18077.61,affordable_later,wait,2024-11-13:80500,2024-11-13,reduce_to:event_10697:755.0|stop:event_10665,Wait recommended: safe amount is 18077.61 INR. Available spending changes: reduce_to:event_10697:755.0|stop:event_10665.
-request_116,16497.1,not_affordable,not_recommended,none,,reduce_to:event_10800:2405.0|stop:event_10734,Not Recommended recommended: safe amount is 16497.1 INR.
-request_117,880.0,affordable_now,full_payment,2026-07-05:880,2026-07-05,stop:event_10833,Full Payment recommended: safe amount is 880.0 EUR. Available spending changes: stop:event_10833.
-request_118,0.0,affordable_with_plan,installments,2024-12-07:255.87|2025-01-07:255.87|2025-02-07:255.87,,reduce_to:event_10914:14.0|stop:event_10912,Installments recommended: safe amount is 0.0 EUR. Available spending changes: reduce_to:event_10914:14.0|stop:event_10912.
-request_119,0.0,affordable_with_plan,installments,2025-05-18:70546.67|2025-06-15:70546.67|2025-07-13:70546.67,,reduce_to:event_11016:2655.0,Installments recommended: safe amount is 0.0 INR. Available spending changes: reduce_to:event_11016:2655.0.
-request_120,7714000.0,affordable_now,full_payment,2026-04-06:7714000,2026-04-06,stop:event_11086,Full Payment recommended: safe amount is 7714000.0 IDR. Available spending changes: stop:event_11086.
-request_121,633.6,affordable_now,full_payment,2024-03-03:633.6,2024-03-03,reduce_to:event_11231:19.5|reduce_to:event_11164:9.5|stop:event_11163,Full Payment recommended: safe amount is 633.6 USD. Available spending changes: reduce_to:event_11231:19.5|reduce_to:event_11164:9.5|stop:event_11163.
-request_122,20558000.0,affordable_with_plan,installments,2025-08-05:7126773.33|2025-09-02:7126773.33|2025-09-30:7126773.33,2025-08-05,stop:event_11268|stop:event_11267,Installments recommended: safe amount is 20558000.0 IDR. Available spending changes: stop:event_11268|stop:event_11267.
+request_107,0.0,affordable_with_plan,installments,2025-05-08:878.59|2025-06-05:878.59|2025-07-03:878.59,,none,Installments recommended: safe amount is 0.0 EUR.
+request_108,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_109,676.18,affordable_with_plan,installments,2024-03-18:645.98|2024-04-18:645.98|2024-05-19:645.98,2024-04-17,none,Installments recommended: safe amount is 676.18 EUR.
+request_110,22352.0,affordable_with_plan,installments,2025-08-06:7748.69|2025-09-03:7748.69|2025-10-01:7748.69,2025-08-06,none,Installments recommended: safe amount is 22352.0 ZAR.
+request_111,16625000.0,affordable_now,full_payment,2026-04-03:16625000,2026-04-03,none,Full Payment recommended: safe amount is 16625000.0 IDR.
+request_112,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
+request_113,36500.0,affordable_now,full_payment,2026-09-04:36500,2026-09-04,none,Full Payment recommended: safe amount is 36500.0 INR.
+request_114,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_115,18077.61,affordable_later,wait,2024-11-13:80500,2024-11-13,none,Wait recommended: safe amount is 18077.61 INR.
+request_116,16497.1,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 16497.1 INR.
+request_117,880.0,affordable_now,full_payment,2026-07-05:880,2026-07-05,none,Full Payment recommended: safe amount is 880.0 EUR.
+request_118,0.0,affordable_with_plan,installments,2024-12-07:255.87|2025-01-07:255.87|2025-02-07:255.87,,none,Installments recommended: safe amount is 0.0 EUR.
+request_119,0.0,affordable_with_plan,installments,2025-05-18:70546.67|2025-06-15:70546.67|2025-07-13:70546.67,,none,Installments recommended: safe amount is 0.0 INR.
+request_120,7714000.0,affordable_now,full_payment,2026-04-06:7714000,2026-04-06,none,Full Payment recommended: safe amount is 7714000.0 IDR.
+request_121,633.6,affordable_now,full_payment,2024-03-03:633.6,2024-03-03,none,Full Payment recommended: safe amount is 633.6 USD.
+request_122,20558000.0,affordable_with_plan,installments,2025-08-05:7126773.33|2025-09-02:7126773.33|2025-09-30:7126773.33,2025-08-05,none,Installments recommended: safe amount is 20558000.0 IDR.
 request_123,4076000.0,affordable_now,full_payment,2026-01-07:4076000,2026-01-07,none,Full Payment recommended: safe amount is 4076000.0 IDR.
-request_124,1648.56,affordable_with_plan,installments,2024-06-11:1076.12|2024-07-12:1076.12|2024-08-12:1076.12,2024-07-14,stop:event_11448,Installments recommended: safe amount is 1648.56 EUR. Available spending changes: stop:event_11448.
-request_125,6468.0,affordable_now,full_payment,2025-11-06:6468,2025-11-06,stop:event_11519,Full Payment recommended: safe amount is 6468.0 ZAR. Available spending changes: stop:event_11519.
-request_126,50230.67,not_affordable,not_recommended,none,,reduce_to:event_11638:1784.0|stop:event_11636,Not Recommended recommended: safe amount is 50230.67 INR.
-request_127,0.0,not_affordable,not_recommended,none,,reduce_to:event_11772:773.3|stop:event_11706|stop:event_11707,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_128,0.0,not_affordable,not_recommended,none,,reduce_to:event_11856:1100.0|reduce_to:event_11812:1058.2|stop:event_11813,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_129,258.0,not_affordable,not_recommended,none,,stop:event_11885|stop:event_11884,Not Recommended recommended: safe amount is 258.0 USD.
-request_130,661.47,affordable_later,wait,2025-01-16:1978.8,2025-01-16,stop:event_11958|stop:event_11957,Wait recommended: safe amount is 661.47 USD. Available spending changes: stop:event_11958|stop:event_11957.
-request_131,1155.15,affordable_with_plan,installments,2025-05-06:643.14|2025-06-03:643.14|2025-07-01:643.14,2025-06-24,reduce_to:event_12065:21.2,Installments recommended: safe amount is 1155.15 USD. Available spending changes: reduce_to:event_12065:21.2.
-request_132,0.0,not_affordable,not_recommended,none,,reduce_to:event_12142:26.0,Not Recommended recommended: safe amount is 0.0 USD.
+request_124,1648.56,affordable_with_plan,installments,2024-06-11:1076.12|2024-07-12:1076.12|2024-08-12:1076.12,2024-07-14,none,Installments recommended: safe amount is 1648.56 EUR.
+request_125,6468.0,affordable_now,full_payment,2025-11-06:6468,2025-11-06,none,Full Payment recommended: safe amount is 6468.0 ZAR.
+request_126,50230.67,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 50230.67 INR.
+request_127,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_128,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_129,258.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 258.0 USD.
+request_130,661.47,affordable_later,wait,2025-01-16:1978.8,2025-01-16,none,Wait recommended: safe amount is 661.47 USD.
+request_131,1155.15,affordable_with_plan,installments,2025-05-06:643.14|2025-06-03:643.14|2025-07-01:643.14,2025-06-24,none,Installments recommended: safe amount is 1155.15 USD.
+request_132,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
 request_133,15770000.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 15770000.0 IDR.
-request_134,8517700.0,affordable_later,wait,2025-09-13:21831000,2025-09-13,stop:event_12314|stop:event_12315,Wait recommended: safe amount is 8517700.0 IDR. Available spending changes: stop:event_12314|stop:event_12315.
-request_135,304.8,affordable_now,full_payment,2026-07-06:304.8,2026-07-06,reduce_to:event_12458:17.5|stop:event_12413,Full Payment recommended: safe amount is 304.8 USD. Available spending changes: reduce_to:event_12458:17.5|stop:event_12413.
-request_136,560.4,affordable_now,full_payment,2024-06-03:560.4,2024-06-03,reduce_to:event_12498:27.2,Full Payment recommended: safe amount is 560.4 USD. Available spending changes: reduce_to:event_12498:27.2.
-request_137,37039.62,affordable_later,wait,2025-12-14:80100,2025-12-14,stop:event_12572,Wait recommended: safe amount is 37039.62 INR. Available spending changes: stop:event_12572.
-request_138,1117.9,affordable_with_plan,partial_payment,2026-04-07:1117.9|2026-04-14:139.04,2026-04-14,stop:event_12669|stop:event_12668,Partial Payment recommended: safe amount is 1117.9 EUR. Available spending changes: stop:event_12669|stop:event_12668.
-request_139,1924.33,not_affordable,not_recommended,none,,stop:event_12741,Not Recommended recommended: safe amount is 1924.33 USD.
-request_140,0.0,not_affordable,not_recommended,none,,reduce_to:event_12909:530.2,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_141,30579.84,not_affordable,not_recommended,none,,stop:event_12948|stop:event_12947,Not Recommended recommended: safe amount is 30579.84 INR.
-request_142,1263.59,not_affordable,not_recommended,none,,reduce_to:event_13068:27.6|reduce_to:event_13105:25.5,Not Recommended recommended: safe amount is 1263.59 USD.
-request_143,4491.89,affordable_later,wait,2025-06-16:12584,2025-06-16,stop:event_13140,Wait recommended: safe amount is 4491.89 ZAR. Available spending changes: stop:event_13140.
-request_144,0.0,not_affordable,not_recommended,none,,stop:event_13240|stop:event_13239,Not Recommended recommended: safe amount is 0.0 USD.
-request_145,0.0,not_affordable,not_recommended,none,,reduce_to:event_13341:2920.0|stop:event_13342,Not Recommended recommended: safe amount is 0.0 INR.
-request_146,38637.75,not_affordable,not_recommended,none,,stop:event_13450,Not Recommended recommended: safe amount is 38637.75 INR.
-request_147,0.0,affordable_with_plan,installments,2026-04-08:391.63|2026-05-08:391.63|2026-06-07:391.63,,reduce_to:event_13522:29.2|stop:event_13521|stop:event_13520,Installments recommended: safe amount is 0.0 EUR. Available spending changes: reduce_to:event_13522:29.2|stop:event_13521|stop:event_13520.
-request_148,8616.1,affordable_with_plan,installments,2024-06-14:7710.56|2024-07-15:7710.56|2024-08-15:7710.56,2024-06-14,reduce_to:event_13594:576.4|reduce_to:event_13661:531.3|stop:event_13593,Installments recommended: safe amount is 8616.1 ZAR. Available spending changes: reduce_to:event_13594:576.4|reduce_to:event_13661:531.3|stop:event_13593.
-request_149,30988.21,affordable_with_plan,installments,2025-11-18:12706.03|2025-12-16:12706.03|2026-01-13:12706.03,2025-11-14,stop:event_13702,Installments recommended: safe amount is 30988.21 ZAR. Available spending changes: stop:event_13702.
-request_150,0.0,affordable_with_plan,installments,2026-01-06:171.98|2026-02-05:171.98|2026-03-07:171.98,,reduce_to:event_13787:16.0|stop:event_13786|stop:event_13785,Installments recommended: safe amount is 0.0 EUR. Available spending changes: reduce_to:event_13787:16.0|stop:event_13786|stop:event_13785.
-request_151,26999000.0,affordable_now,full_payment,2024-09-03:26999000,2024-09-03,reduce_to:event_13923:633650.0,Full Payment recommended: safe amount is 26999000.0 IDR. Available spending changes: reduce_to:event_13923:633650.0.
-request_152,12782.51,affordable_with_plan,installments,2025-02-12:4812.43|2025-03-12:4812.43|2025-04-09:4812.43,2025-02-14,stop:event_13958|stop:event_13957,Installments recommended: safe amount is 12782.51 ZAR. Available spending changes: stop:event_13958|stop:event_13957.
-request_153,226.82,not_affordable,not_recommended,none,,stop:event_14064|stop:event_14063,Not Recommended recommended: safe amount is 226.82 USD.
-request_154,1092.2,affordable_with_plan,installments,2024-12-04:563.61|2025-01-04:563.61|2025-02-04:563.61,,reduce_to:event_14186:27.2,Installments recommended: safe amount is 1092.2 EUR. Available spending changes: reduce_to:event_14186:27.2.
-request_155,58282.68,not_affordable,not_recommended,none,,stop:event_14289,Not Recommended recommended: safe amount is 58282.68 INR.
-request_156,10808.25,affordable_later,wait,2026-05-14:43076,2026-05-14,reduce_to:event_14359:402.6,Wait recommended: safe amount is 10808.25 ZAR. Available spending changes: reduce_to:event_14359:402.6.
-request_157,8888200.0,affordable_later,wait,2024-03-17:23503000,2024-03-17,reduce_to:event_14433:368600.0,Wait recommended: safe amount is 8888200.0 IDR. Available spending changes: reduce_to:event_14433:368600.0.
-request_158,242600.0,affordable_with_plan,installments,2025-08-07:84101.33|2025-09-04:84101.33|2025-10-02:84101.33,2025-08-07,reduce_to:event_14534:3280.0,Installments recommended: safe amount is 242600.0 INR. Available spending changes: reduce_to:event_14534:3280.0.
-request_159,13398.0,affordable_now,full_payment,2026-01-04:13398,2026-01-04,stop:event_14619,Full Payment recommended: safe amount is 13398.0 ZAR. Available spending changes: stop:event_14619.
+request_134,8517700.0,affordable_later,wait,2025-09-13:21831000,2025-09-13,none,Wait recommended: safe amount is 8517700.0 IDR.
+request_135,304.8,affordable_now,full_payment,2026-07-06:304.8,2026-07-06,none,Full Payment recommended: safe amount is 304.8 USD.
+request_136,560.4,affordable_now,full_payment,2024-06-03:560.4,2024-06-03,none,Full Payment recommended: safe amount is 560.4 USD.
+request_137,37039.62,affordable_later,wait,2025-12-14:80100,2025-12-14,none,Wait recommended: safe amount is 37039.62 INR.
+request_138,1117.9,affordable_with_plan,partial_payment,2026-04-07:1117.9|2026-04-14:139.04,2026-04-14,none,Partial Payment recommended: safe amount is 1117.9 EUR.
+request_139,1924.33,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 1924.33 USD.
+request_140,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_141,30579.84,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 30579.84 INR.
+request_142,1263.59,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 1263.59 USD.
+request_143,4491.89,affordable_later,wait,2025-06-16:12584,2025-06-16,none,Wait recommended: safe amount is 4491.89 ZAR.
+request_144,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_145,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_146,38637.75,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 38637.75 INR.
+request_147,0.0,affordable_with_plan,installments,2026-04-08:391.63|2026-05-08:391.63|2026-06-07:391.63,,none,Installments recommended: safe amount is 0.0 EUR.
+request_148,8616.1,affordable_with_plan,installments,2024-06-14:7710.56|2024-07-15:7710.56|2024-08-15:7710.56,2024-06-14,none,Installments recommended: safe amount is 8616.1 ZAR.
+request_149,30988.21,affordable_with_plan,installments,2025-11-18:12706.03|2025-12-16:12706.03|2026-01-13:12706.03,2025-11-14,none,Installments recommended: safe amount is 30988.21 ZAR.
+request_150,0.0,affordable_with_plan,installments,2026-01-06:171.98|2026-02-05:171.98|2026-03-07:171.98,,none,Installments recommended: safe amount is 0.0 EUR.
+request_151,26999000.0,affordable_now,full_payment,2024-09-03:26999000,2024-09-03,none,Full Payment recommended: safe amount is 26999000.0 IDR.
+request_152,12782.51,affordable_with_plan,installments,2025-02-12:4812.43|2025-03-12:4812.43|2025-04-09:4812.43,2025-02-14,none,Installments recommended: safe amount is 12782.51 ZAR.
+request_153,226.82,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 226.82 USD.
+request_154,1092.2,affordable_with_plan,installments,2024-12-04:563.61|2025-01-04:563.61|2025-02-04:563.61,,none,Installments recommended: safe amount is 1092.2 EUR.
+request_155,58282.68,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 58282.68 INR.
+request_156,10808.25,affordable_later,wait,2026-05-14:43076,2026-05-14,none,Wait recommended: safe amount is 10808.25 ZAR.
+request_157,8888200.0,affordable_later,wait,2024-03-17:23503000,2024-03-17,none,Wait recommended: safe amount is 8888200.0 IDR.
+request_158,242600.0,affordable_with_plan,installments,2025-08-07:84101.33|2025-09-04:84101.33|2025-10-02:84101.33,2025-08-07,none,Installments recommended: safe amount is 242600.0 INR.
+request_159,13398.0,affordable_now,full_payment,2026-01-04:13398,2026-01-04,none,Full Payment recommended: safe amount is 13398.0 ZAR.
 request_160,643.61,affordable_with_plan,installments,2024-06-13:432.05|2024-07-14:432.05|2024-08-14:432.05,2024-06-14,none,Installments recommended: safe amount is 643.61 EUR.
-request_161,0.0,not_affordable,not_recommended,none,,stop:event_14774|stop:event_14775,Not Recommended recommended: safe amount is 0.0 IDR.
-request_162,5493626.11,not_affordable,not_recommended,none,,stop:event_14872,Not Recommended recommended: safe amount is 5493626.11 IDR.
-request_163,0.0,affordable_with_plan,installments,2024-09-10:6692053.33|2024-10-11:6692053.33|2024-11-11:6692053.33,,stop:event_14953,Installments recommended: safe amount is 0.0 IDR. Available spending changes: stop:event_14953.
-request_164,0.0,affordable_with_plan,installments,2025-02-11:9366240|2025-03-11:9366240|2025-04-08:9366240,,reduce_to:event_15063:415150.0|stop:event_15064,Installments recommended: safe amount is 0.0 IDR. Available spending changes: reduce_to:event_15063:415150.0|stop:event_15064.
-request_165,80600.0,affordable_now,full_payment,2026-04-06:80600,2026-04-06,stop:event_15135|stop:event_15134,Full Payment recommended: safe amount is 80600.0 INR. Available spending changes: stop:event_15135|stop:event_15134.
-request_166,2907.6,affordable_with_plan,installments,2024-12-03:1007.97|2025-01-03:1007.97|2025-02-03:1007.97,2024-12-03,reduce_to:event_15208:29.5,Installments recommended: safe amount is 2907.6 USD. Available spending changes: reduce_to:event_15208:29.5.
-request_167,43802.0,affordable_now,full_payment,2025-05-05:43802,2025-05-05,stop:event_15285,Full Payment recommended: safe amount is 43802.0 ZAR. Available spending changes: stop:event_15285.
-request_168,0.0,not_affordable,not_recommended,none,,stop:event_15364,Not Recommended recommended: safe amount is 0.0 INR.
-request_169,41976.0,affordable_now,full_payment,2024-03-04:41976,2024-03-04,stop:event_15488,Full Payment recommended: safe amount is 41976.0 ZAR. Available spending changes: stop:event_15488.
-request_170,34352557.26,affordable_with_plan,installments,2025-08-06:12804480|2025-09-03:12804480|2025-10-01:12804480,2025-08-14,stop:event_15605|stop:event_15604,Installments recommended: safe amount is 34352557.26 IDR. Available spending changes: stop:event_15605|stop:event_15604.
-request_171,113.74,not_affordable,not_recommended,none,,stop:event_15701,Not Recommended recommended: safe amount is 113.74 EUR.
-request_172,10200.0,affordable_with_plan,installments,2024-06-05:5304|2024-07-03:5304,2024-06-05,stop:event_15784,Installments recommended: safe amount is 10200.0 ZAR. Available spending changes: stop:event_15784.
-request_173,67136.31,affordable_with_plan,installments,2025-11-21:39173.33|2025-12-19:39173.33|2026-01-16:39173.33,2026-01-13,reduce_to:event_15946:2105.0|reduce_to:event_15864:1272.0,Installments recommended: safe amount is 67136.31 INR. Available spending changes: reduce_to:event_15946:2105.0|reduce_to:event_15864:1272.0.
-request_174,1146.2,affordable_with_plan,installments,2026-04-04:397.35|2026-05-04:397.35|2026-06-03:397.35,2026-04-04,reduce_to:event_15976:16.8|stop:event_15975|stop:event_15974,Installments recommended: safe amount is 1146.2 EUR. Available spending changes: reduce_to:event_15976:16.8|stop:event_15975|stop:event_15974.
-request_175,2346.3,affordable_now,full_payment,2024-09-06:2346.3,2024-09-06,reduce_to:event_16047:21.5|stop:event_16045,Full Payment recommended: safe amount is 2346.3 EUR. Available spending changes: reduce_to:event_16047:21.5|stop:event_16045.
-request_176,0.0,not_affordable,not_recommended,none,,reduce_to:event_16157:11.6,Not Recommended recommended: safe amount is 0.0 EUR.
-request_177,0.0,not_affordable,not_recommended,none,,reduce_to:event_16236:34.4|reduce_to:event_16317:32.0|stop:event_16235,Not Recommended recommended: safe amount is 0.0 USD.
-request_178,2781.62,affordable_with_plan,installments,2024-12-07:1018.54|2025-01-07:1018.54|2025-02-07:1018.54,,reduce_to:event_16352:46.4,Installments recommended: safe amount is 2781.62 EUR. Available spending changes: reduce_to:event_16352:46.4.
+request_161,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 IDR.
+request_162,5493626.11,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 5493626.11 IDR.
+request_163,0.0,affordable_with_plan,installments,2024-09-10:6692053.33|2024-10-11:6692053.33|2024-11-11:6692053.33,,none,Installments recommended: safe amount is 0.0 IDR.
+request_164,0.0,affordable_with_plan,installments,2025-02-11:9366240|2025-03-11:9366240|2025-04-08:9366240,,none,Installments recommended: safe amount is 0.0 IDR.
+request_165,80600.0,affordable_now,full_payment,2026-04-06:80600,2026-04-06,none,Full Payment recommended: safe amount is 80600.0 INR.
+request_166,2907.6,affordable_with_plan,installments,2024-12-03:1007.97|2025-01-03:1007.97|2025-02-03:1007.97,2024-12-03,none,Installments recommended: safe amount is 2907.6 USD.
+request_167,43802.0,affordable_now,full_payment,2025-05-05:43802,2025-05-05,none,Full Payment recommended: safe amount is 43802.0 ZAR.
+request_168,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_169,41976.0,affordable_now,full_payment,2024-03-04:41976,2024-03-04,none,Full Payment recommended: safe amount is 41976.0 ZAR.
+request_170,34352557.26,affordable_with_plan,installments,2025-08-06:12804480|2025-09-03:12804480|2025-10-01:12804480,2025-08-14,none,Installments recommended: safe amount is 34352557.26 IDR.
+request_171,113.74,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 113.74 EUR.
+request_172,10200.0,affordable_with_plan,installments,2024-06-05:5304|2024-07-03:5304,2024-06-05,none,Installments recommended: safe amount is 10200.0 ZAR.
+request_173,67136.31,affordable_with_plan,installments,2025-11-21:39173.33|2025-12-19:39173.33|2026-01-16:39173.33,2026-01-13,none,Installments recommended: safe amount is 67136.31 INR.
+request_174,1146.2,affordable_with_plan,installments,2026-04-04:397.35|2026-05-04:397.35|2026-06-03:397.35,2026-04-04,none,Installments recommended: safe amount is 1146.2 EUR.
+request_175,2346.3,affordable_now,full_payment,2024-09-06:2346.3,2024-09-06,none,Full Payment recommended: safe amount is 2346.3 EUR.
+request_176,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
+request_177,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_178,2781.62,affordable_with_plan,installments,2024-12-07:1018.54|2025-01-07:1018.54|2025-02-07:1018.54,,none,Installments recommended: safe amount is 2781.62 EUR.
 request_179,11029905.89,affordable_later,wait,2025-06-16:41648000,2025-06-16,none,Wait recommended: safe amount is 11029905.89 IDR.
 request_180,0.0,affordable_with_plan,installments,2026-07-06:11970|2026-08-03:11970|2026-08-31:11970|2026-09-28:11970|2026-10-26:11970|2026-11-23:11970,,none,Installments recommended: safe amount is 0.0 INR.
-request_181,689.98,not_affordable,not_recommended,none,,stop:event_16621|stop:event_16622,Not Recommended recommended: safe amount is 689.98 USD.
-request_182,18285.65,not_affordable,not_recommended,none,,stop:event_16734,Not Recommended recommended: safe amount is 18285.65 ZAR.
-request_183,25045715.14,affordable_with_plan,installments,2026-04-10:9313546.67|2026-05-10:9313546.67|2026-06-09:9313546.67,2026-04-14,reduce_to:event_16815:365560.0|stop:event_16814|stop:event_16813,Installments recommended: safe amount is 25045715.14 IDR. Available spending changes: reduce_to:event_16815:365560.0|stop:event_16814|stop:event_16813.
-request_184,23219.74,not_affordable,not_recommended,none,,stop:event_16935|stop:event_16934,Not Recommended recommended: safe amount is 23219.74 INR.
-request_185,467.87,affordable_later,wait,2026-01-13:1257.3,2026-01-13,reduce_to:event_17120:33.5|stop:event_17052|stop:event_17053,Wait recommended: safe amount is 467.87 EUR. Available spending changes: reduce_to:event_17120:33.5|stop:event_17052|stop:event_17053.
-request_186,0.0,not_affordable,not_recommended,none,,reduce_to:event_17160:660.0|reduce_to:event_17239:623.7|stop:event_17159,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_187,45593.06,affordable_later,wait,2024-10-14:187500,2024-10-14,stop:event_17265,Wait recommended: safe amount is 45593.06 INR. Available spending changes: stop:event_17265.
-request_188,203.96,not_affordable,not_recommended,none,,reduce_to:event_17399:18.5|stop:event_17332|stop:event_17331,Not Recommended recommended: safe amount is 203.96 EUR.
-request_189,488.4,affordable_now,full_payment,2026-07-04:488.4,2026-07-04,stop:event_17431,Full Payment recommended: safe amount is 488.4 EUR. Available spending changes: stop:event_17431.
+request_181,689.98,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 689.98 USD.
+request_182,18285.65,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 18285.65 ZAR.
+request_183,25045715.14,affordable_with_plan,installments,2026-04-10:9313546.67|2026-05-10:9313546.67|2026-06-09:9313546.67,2026-04-14,none,Installments recommended: safe amount is 25045715.14 IDR.
+request_184,23219.74,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 23219.74 INR.
+request_185,467.87,affordable_later,wait,2026-01-13:1257.3,2026-01-13,none,Wait recommended: safe amount is 467.87 EUR.
+request_186,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_187,45593.06,affordable_later,wait,2024-10-14:187500,2024-10-14,none,Wait recommended: safe amount is 45593.06 INR.
+request_188,203.96,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 203.96 EUR.
+request_189,488.4,affordable_now,full_payment,2026-07-04:488.4,2026-07-04,none,Full Payment recommended: safe amount is 488.4 EUR.
 request_190,780.2,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 780.2 EUR.
-request_191,664.4,affordable_now,full_payment,2025-05-03:664.4,2025-05-03,stop:event_17620,Full Payment recommended: safe amount is 664.4 EUR. Available spending changes: stop:event_17620.
-request_192,0.0,not_affordable,not_recommended,none,,reduce_to:event_17734:20.5|stop:event_17696|stop:event_17695,Not Recommended recommended: safe amount is 0.0 USD.
-request_193,163.25,affordable_with_plan,installments,2024-03-21:420.23|2024-04-21:420.23|2024-05-22:420.23,2024-04-17,stop:event_17768|stop:event_17767,Installments recommended: safe amount is 163.25 EUR. Available spending changes: stop:event_17768|stop:event_17767.
-request_194,44841.78,affordable_later,wait,2025-10-21:132800,2025-10-21,reduce_to:event_17877:1796.0|stop:event_17876,Wait recommended: safe amount is 44841.78 INR. Available spending changes: reduce_to:event_17877:1796.0|stop:event_17876.
-request_195,0.0,affordable_with_plan,installments,2026-01-09:405.74|2026-02-08:405.74|2026-03-10:405.74,,reduce_to:event_17957:13.0|reduce_to:event_17955:12.0,Installments recommended: safe amount is 0.0 EUR. Available spending changes: reduce_to:event_17957:13.0|reduce_to:event_17955:12.0.
-request_196,762.3,affordable_now,full_payment,2024-06-03:762.3,2024-06-03,reduce_to:event_18094:16.5|stop:event_18062,Full Payment recommended: safe amount is 762.3 EUR. Available spending changes: reduce_to:event_18094:16.5|stop:event_18062.
-request_197,0.0,affordable_with_plan,installments,2025-11-19:17658853.33|2025-12-17:17658853.33|2026-01-14:17658853.33,,stop:event_18126|stop:event_18125,Installments recommended: safe amount is 0.0 IDR. Available spending changes: stop:event_18126|stop:event_18125.
-request_198,185800.0,affordable_now,full_payment,2026-07-07:185800,2026-07-07,stop:event_18222,Full Payment recommended: safe amount is 185800.0 INR. Available spending changes: stop:event_18222.
-request_199,23674000.0,affordable_with_plan,installments,2024-09-07:8206986.67|2024-10-08:8206986.67|2024-11-08:8206986.67,2024-09-04,reduce_to:event_18319:753350.0|stop:event_18316,Installments recommended: safe amount is 23674000.0 IDR. Available spending changes: reduce_to:event_18319:753350.0|stop:event_18316.
-request_200,8418570.14,not_affordable,not_recommended,none,,reduce_to:event_18422:394250.0|stop:event_18423,Not Recommended recommended: safe amount is 8418570.14 IDR.
-request_201,23997000.0,affordable_now,full_payment,2026-04-03:23997000,2026-04-03,stop:event_18493|stop:event_18492,Full Payment recommended: safe amount is 23997000.0 IDR. Available spending changes: stop:event_18493|stop:event_18492.
-request_202,123900.0,affordable_now,full_payment,2024-12-05:123900,2024-12-05,stop:event_18571,Full Payment recommended: safe amount is 123900.0 INR. Available spending changes: stop:event_18571.
-request_203,1442.1,affordable_with_plan,installments,2025-05-10:499.93|2025-06-07:499.93|2025-07-05:499.93,2025-05-07,reduce_to:event_18663:35.0|stop:event_18662|stop:event_18660,Installments recommended: safe amount is 1442.1 EUR. Available spending changes: reduce_to:event_18663:35.0|stop:event_18662|stop:event_18660.
-request_204,0.0,not_affordable,not_recommended,none,,stop:event_18761,Not Recommended recommended: safe amount is 0.0 EUR.
-request_205,10621000.0,affordable_now,full_payment,2024-03-06:10621000,2024-03-06,stop:event_18861|stop:event_18862,Full Payment recommended: safe amount is 10621000.0 IDR. Available spending changes: stop:event_18861|stop:event_18862.
-request_206,1404.7,affordable_with_plan,installments,2025-08-03:486.96|2025-08-31:486.96|2025-09-28:486.96,2025-08-03,reduce_to:event_18965:19.5|stop:event_18964,Installments recommended: safe amount is 1404.7 EUR. Available spending changes: reduce_to:event_18965:19.5|stop:event_18964.
-request_207,3184.55,affordable_later,wait,2026-08-14:11830,2026-08-14,stop:event_19033,Wait recommended: safe amount is 3184.55 ZAR. Available spending changes: stop:event_19033.
+request_191,664.4,affordable_now,full_payment,2025-05-03:664.4,2025-05-03,none,Full Payment recommended: safe amount is 664.4 EUR.
+request_192,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_193,163.25,affordable_with_plan,installments,2024-03-21:420.23|2024-04-21:420.23|2024-05-22:420.23,2024-04-17,none,Installments recommended: safe amount is 163.25 EUR.
+request_194,44841.78,affordable_later,wait,2025-10-21:132800,2025-10-21,none,Wait recommended: safe amount is 44841.78 INR.
+request_195,0.0,affordable_with_plan,installments,2026-01-09:405.74|2026-02-08:405.74|2026-03-10:405.74,,none,Installments recommended: safe amount is 0.0 EUR.
+request_196,762.3,affordable_now,full_payment,2024-06-03:762.3,2024-06-03,none,Full Payment recommended: safe amount is 762.3 EUR.
+request_197,0.0,affordable_with_plan,installments,2025-11-19:17658853.33|2025-12-17:17658853.33|2026-01-14:17658853.33,,none,Installments recommended: safe amount is 0.0 IDR.
+request_198,185800.0,affordable_now,full_payment,2026-07-07:185800,2026-07-07,none,Full Payment recommended: safe amount is 185800.0 INR.
+request_199,23674000.0,affordable_with_plan,installments,2024-09-07:8206986.67|2024-10-08:8206986.67|2024-11-08:8206986.67,2024-09-04,none,Installments recommended: safe amount is 23674000.0 IDR.
+request_200,8418570.14,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 8418570.14 IDR.
+request_201,23997000.0,affordable_now,full_payment,2026-04-03:23997000,2026-04-03,none,Full Payment recommended: safe amount is 23997000.0 IDR.
+request_202,123900.0,affordable_now,full_payment,2024-12-05:123900,2024-12-05,none,Full Payment recommended: safe amount is 123900.0 INR.
+request_203,1442.1,affordable_with_plan,installments,2025-05-10:499.93|2025-06-07:499.93|2025-07-05:499.93,2025-05-07,none,Installments recommended: safe amount is 1442.1 EUR.
+request_204,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
+request_205,10621000.0,affordable_now,full_payment,2024-03-06:10621000,2024-03-06,none,Full Payment recommended: safe amount is 10621000.0 IDR.
+request_206,1404.7,affordable_with_plan,installments,2025-08-03:486.96|2025-08-31:486.96|2025-09-28:486.96,2025-08-03,none,Installments recommended: safe amount is 1404.7 EUR.
+request_207,3184.55,affordable_later,wait,2026-08-14:11830,2026-08-14,none,Wait recommended: safe amount is 3184.55 ZAR.
 request_208,4202099.78,affordable_later,wait,2024-06-14:4413000,2024-06-14,none,Wait recommended: safe amount is 4202099.78 IDR.
-request_209,5570.43,not_affordable,not_recommended,none,,reduce_to:event_19264:325.6|reduce_to:event_19222:242.0|stop:event_19223,Not Recommended recommended: safe amount is 5570.43 ZAR.
-request_210,1121.99,affordable_with_plan,partial_payment,2026-04-06:1121.99|2026-04-14:238.03,2026-04-14,stop:event_19294|stop:event_19293,Partial Payment recommended: safe amount is 1121.99 USD. Available spending changes: stop:event_19294|stop:event_19293.
-request_211,604.42,affordable_later,wait,2024-10-14:1788.6,2024-10-14,reduce_to:event_19369:27.5,Wait recommended: safe amount is 604.42 EUR. Available spending changes: reduce_to:event_19369:27.5.
-request_212,10947541.41,not_affordable,not_recommended,none,,stop:event_19472,Not Recommended recommended: safe amount is 10947541.41 IDR.
-request_213,3362.4,affordable_with_plan,installments,2026-01-21:1165.63|2026-02-20:1165.63|2026-03-22:1165.63,2026-01-07,stop:event_19549|stop:event_19548,Installments recommended: safe amount is 3362.4 USD. Available spending changes: stop:event_19549|stop:event_19548.
-request_214,69750.0,affordable_with_plan,installments,2024-12-04:36270|2025-01-01:36270,2024-12-04,stop:event_19670,Installments recommended: safe amount is 69750.0 INR. Available spending changes: stop:event_19670.
-request_215,29986.0,affordable_with_plan,installments,2025-05-09:10395.15|2025-06-06:10395.15|2025-07-04:10395.15,2025-05-06,reduce_to:event_19803:390.5|reduce_to:event_19802:271.7|stop:event_19801,Installments recommended: safe amount is 29986.0 ZAR. Available spending changes: reduce_to:event_19803:390.5|reduce_to:event_19802:271.7|stop:event_19801.
-request_216,729.71,affordable_later,wait,2026-09-13:3332.4,2026-09-13,stop:event_19898,Wait recommended: safe amount is 729.71 USD. Available spending changes: stop:event_19898.
-request_217,21967.06,affordable_with_plan,installments,2024-03-19:12889.07|2024-04-19:12889.07|2024-05-20:12889.07,,stop:event_19977|stop:event_19978,Installments recommended: safe amount is 21967.06 ZAR. Available spending changes: stop:event_19977|stop:event_19978.
+request_209,5570.43,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 5570.43 ZAR.
+request_210,1121.99,affordable_with_plan,partial_payment,2026-04-06:1121.99|2026-04-14:238.03,2026-04-14,none,Partial Payment recommended: safe amount is 1121.99 USD.
+request_211,604.42,affordable_later,wait,2024-10-14:1788.6,2024-10-14,none,Wait recommended: safe amount is 604.42 EUR.
+request_212,10947541.41,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 10947541.41 IDR.
+request_213,3362.4,affordable_with_plan,installments,2026-01-21:1165.63|2026-02-20:1165.63|2026-03-22:1165.63,2026-01-07,none,Installments recommended: safe amount is 3362.4 USD.
+request_214,69750.0,affordable_with_plan,installments,2024-12-04:36270|2025-01-01:36270,2024-12-04,none,Installments recommended: safe amount is 69750.0 INR.
+request_215,29986.0,affordable_with_plan,installments,2025-05-09:10395.15|2025-06-06:10395.15|2025-07-04:10395.15,2025-05-06,none,Installments recommended: safe amount is 29986.0 ZAR.
+request_216,729.71,affordable_later,wait,2026-09-13:3332.4,2026-09-13,none,Wait recommended: safe amount is 729.71 USD.
+request_217,21967.06,affordable_with_plan,installments,2024-03-19:12889.07|2024-04-19:12889.07|2024-05-20:12889.07,,none,Installments recommended: safe amount is 21967.06 ZAR.
 request_218,30078925.3,affordable_with_plan,installments,2025-08-07:21195893.33|2025-09-04:21195893.33|2025-10-02:21195893.33,2025-09-13,none,Installments recommended: safe amount is 30078925.3 IDR.
-request_219,0.0,affordable_with_plan,installments,2026-04-07:580.01|2026-05-07:580.01|2026-06-06:580.01,,reduce_to:event_20157:26.5,Installments recommended: safe amount is 0.0 EUR. Available spending changes: reduce_to:event_20157:26.5.
-request_220,208.96,not_affordable,not_recommended,none,,reduce_to:event_20229:18.5|stop:event_20228,Not Recommended recommended: safe amount is 208.96 EUR.
-request_221,109800.0,affordable_now,full_payment,2025-11-03:109800,2025-11-03,stop:event_20336,Full Payment recommended: safe amount is 109800.0 INR. Available spending changes: stop:event_20336.
-request_222,34078.0,affordable_now,full_payment,2026-01-05:34078,2026-01-05,stop:event_20414,Full Payment recommended: safe amount is 34078.0 ZAR. Available spending changes: stop:event_20414.
-request_223,898.7,affordable_now,full_payment,2024-09-07:898.7,2024-09-07,reduce_to:event_20510:18.5|stop:event_20478,Full Payment recommended: safe amount is 898.7 EUR. Available spending changes: reduce_to:event_20510:18.5|stop:event_20478.
-request_224,10327000.0,affordable_with_plan,installments,2025-02-04:5370040|2025-03-04:5370040,2025-02-04,stop:event_20547|stop:event_20546,Installments recommended: safe amount is 10327000.0 IDR. Available spending changes: stop:event_20547|stop:event_20546.
-request_225,11107566.63,affordable_with_plan,installments,2026-07-20:7647120|2026-08-19:7647120|2026-09-18:7647120,2026-08-14,reduce_to:event_20649:314450.0|stop:event_20650,Installments recommended: safe amount is 11107566.63 IDR. Available spending changes: reduce_to:event_20649:314450.0|stop:event_20650.
-request_226,0.0,not_affordable,not_recommended,none,,reduce_to:event_20752:3700.0|stop:event_20753,Not Recommended recommended: safe amount is 0.0 INR.
-request_227,0.0,not_affordable,not_recommended,none,,reduce_to:event_20859:1790.0,Not Recommended recommended: safe amount is 0.0 INR.
-request_228,0.0,not_affordable,not_recommended,none,,reduce_to:event_20999:576650.0|stop:event_20932|stop:event_20931,Not Recommended recommended: safe amount is 0.0 IDR.
-request_229,631.96,affordable_with_plan,installments,2024-03-18:529.29|2024-04-18:529.29|2024-05-19:529.29,2024-04-17,stop:event_21032|stop:event_21031,Installments recommended: safe amount is 631.96 EUR. Available spending changes: stop:event_21032|stop:event_21031.
-request_230,1411.88,not_affordable,not_recommended,none,,stop:event_21145,Not Recommended recommended: safe amount is 1411.88 EUR.
-request_231,35706.0,affordable_with_plan,installments,2026-01-06:12378.08|2026-02-05:12378.08|2026-03-07:12378.08,2026-01-03,stop:event_21224|stop:event_21223,Installments recommended: safe amount is 35706.0 ZAR. Available spending changes: stop:event_21224|stop:event_21223.
-request_232,0.0,not_affordable,not_recommended,none,,reduce_to:event_21408:50.0|stop:event_21341,Not Recommended recommended: safe amount is 0.0 EUR.
-request_233,0.0,affordable_with_plan,installments,2025-11-14:3245320|2025-12-15:3245320,,stop:event_21439|stop:event_21438,Installments recommended: safe amount is 0.0 IDR. Available spending changes: stop:event_21439|stop:event_21438.
-request_234,341.57,affordable_later,wait,2026-08-14:1213.3,2026-08-14,reduce_to:event_21580:16.0|stop:event_21536,Wait recommended: safe amount is 341.57 EUR. Available spending changes: reduce_to:event_21580:16.0|stop:event_21536.
-request_235,967.2,affordable_now,full_payment,2024-09-06:967.2,2024-09-06,reduce_to:event_21621:16.0|stop:event_21620|stop:event_21619,Full Payment recommended: safe amount is 967.2 USD. Available spending changes: reduce_to:event_21621:16.0|stop:event_21620|stop:event_21619.
-request_236,9747939.41,not_affordable,not_recommended,none,,reduce_to:event_21783:451250.0|stop:event_21742,Not Recommended recommended: safe amount is 9747939.41 IDR.
-request_237,23826000.0,affordable_now,full_payment,2026-04-05:23826000,2026-04-05,reduce_to:event_21812:382850.0,Full Payment recommended: safe amount is 23826000.0 IDR. Available spending changes: reduce_to:event_21812:382850.0.
-request_238,77.46,affordable_with_plan,installments,2024-12-07:230.05|2025-01-07:230.05|2025-02-07:230.05,,stop:event_21888|stop:event_21887,Installments recommended: safe amount is 77.46 USD. Available spending changes: stop:event_21888|stop:event_21887.
+request_219,0.0,affordable_with_plan,installments,2026-04-07:580.01|2026-05-07:580.01|2026-06-06:580.01,,none,Installments recommended: safe amount is 0.0 EUR.
+request_220,208.96,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 208.96 EUR.
+request_221,109800.0,affordable_now,full_payment,2025-11-03:109800,2025-11-03,none,Full Payment recommended: safe amount is 109800.0 INR.
+request_222,34078.0,affordable_now,full_payment,2026-01-05:34078,2026-01-05,none,Full Payment recommended: safe amount is 34078.0 ZAR.
+request_223,898.7,affordable_now,full_payment,2024-09-07:898.7,2024-09-07,none,Full Payment recommended: safe amount is 898.7 EUR.
+request_224,10327000.0,affordable_with_plan,installments,2025-02-04:5370040|2025-03-04:5370040,2025-02-04,none,Installments recommended: safe amount is 10327000.0 IDR.
+request_225,11107566.63,affordable_with_plan,installments,2026-07-20:7647120|2026-08-19:7647120|2026-09-18:7647120,2026-08-14,none,Installments recommended: safe amount is 11107566.63 IDR.
+request_226,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_227,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_228,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 IDR.
+request_229,631.96,affordable_with_plan,installments,2024-03-18:529.29|2024-04-18:529.29|2024-05-19:529.29,2024-04-17,none,Installments recommended: safe amount is 631.96 EUR.
+request_230,1411.88,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 1411.88 EUR.
+request_231,35706.0,affordable_with_plan,installments,2026-01-06:12378.08|2026-02-05:12378.08|2026-03-07:12378.08,2026-01-03,none,Installments recommended: safe amount is 35706.0 ZAR.
+request_232,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
+request_233,0.0,affordable_with_plan,installments,2025-11-14:3245320|2025-12-15:3245320,,none,Installments recommended: safe amount is 0.0 IDR.
+request_234,341.57,affordable_later,wait,2026-08-14:1213.3,2026-08-14,none,Wait recommended: safe amount is 341.57 EUR.
+request_235,967.2,affordable_now,full_payment,2024-09-06:967.2,2024-09-06,none,Full Payment recommended: safe amount is 967.2 USD.
+request_236,9747939.41,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 9747939.41 IDR.
+request_237,23826000.0,affordable_now,full_payment,2026-04-05:23826000,2026-04-05,none,Full Payment recommended: safe amount is 23826000.0 IDR.
+request_238,77.46,affordable_with_plan,installments,2024-12-07:230.05|2025-01-07:230.05|2025-02-07:230.05,,none,Installments recommended: safe amount is 77.46 USD.
 request_239,469.26,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 469.26 USD.
-request_240,0.0,not_affordable,not_recommended,none,,stop:event_22063|stop:event_22062,Not Recommended recommended: safe amount is 0.0 INR.
-request_241,21052000.0,not_affordable,not_recommended,none,,stop:event_22154,Not Recommended recommended: safe amount is 21052000.0 IDR.
-request_242,0.0,not_affordable,not_recommended,none,,reduce_to:event_22283:17.5|stop:event_22218|stop:event_22217,Not Recommended recommended: safe amount is 0.0 EUR.
-request_243,17468.0,affordable_now,full_payment,2026-07-07:17468,2026-07-07,stop:event_22314,Full Payment recommended: safe amount is 17468.0 ZAR. Available spending changes: stop:event_22314.
-request_244,36593.01,affordable_with_plan,installments,2024-06-04:8985.24|2024-07-04:8985.24|2024-08-03:8985.24|2024-09-02:8985.24|2024-10-02:8985.24|2024-11-01:8985.24,,reduce_to:event_22461:1197.9|stop:event_22395,Installments recommended: safe amount is 36593.01 ZAR. Available spending changes: reduce_to:event_22461:1197.9|stop:event_22395.
+request_240,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_241,21052000.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 21052000.0 IDR.
+request_242,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 EUR.
+request_243,17468.0,affordable_now,full_payment,2026-07-07:17468,2026-07-07,none,Full Payment recommended: safe amount is 17468.0 ZAR.
+request_244,36593.01,affordable_with_plan,installments,2024-06-04:8985.24|2024-07-04:8985.24|2024-08-03:8985.24|2024-09-02:8985.24|2024-10-02:8985.24|2024-11-01:8985.24,,none,Installments recommended: safe amount is 36593.01 ZAR.
 request_245,57140.0,affordable_later,wait,2025-11-14:128500,2025-11-14,none,Wait recommended: safe amount is 57140.0 INR.
-request_246,64086.0,affordable_with_plan,installments,2026-04-03:22216.48|2026-05-03:22216.48|2026-06-02:22216.48,2026-04-03,reduce_to:event_22613:609.4,Installments recommended: safe amount is 64086.0 ZAR. Available spending changes: reduce_to:event_22613:609.4.
-request_247,1059.3,affordable_now,full_payment,2024-09-05:1059.3,2024-09-05,stop:event_22685|stop:event_22683,Full Payment recommended: safe amount is 1059.3 EUR. Available spending changes: stop:event_22685|stop:event_22683.
-request_248,0.0,not_affordable,not_recommended,none,,reduce_to:event_22795:15.2|stop:event_22794,Not Recommended recommended: safe amount is 0.0 USD.
-request_249,0.0,not_affordable,not_recommended,none,,stop:event_22874|stop:event_22873,Not Recommended recommended: safe amount is 0.0 USD.
-request_250,17830.39,not_affordable,not_recommended,none,,stop:event_22981,Not Recommended recommended: safe amount is 17830.39 ZAR.
-request_251,348.91,not_affordable,not_recommended,none,,stop:event_23062|stop:event_23061,Not Recommended recommended: safe amount is 348.91 EUR.
-request_252,6206397.52,affordable_later,wait,2026-08-14:28082000,2026-08-14,stop:event_23156,Wait recommended: safe amount is 6206397.52 IDR. Available spending changes: stop:event_23156.
-request_253,1764.4,affordable_with_plan,installments,2024-03-21:984.6|2024-04-21:984.6|2024-05-22:984.6,2024-04-17,stop:event_23237,Installments recommended: safe amount is 1764.4 EUR. Available spending changes: stop:event_23237.
-request_254,0.0,not_affordable,not_recommended,none,,reduce_to:event_23347:53.0|stop:event_23348,Not Recommended recommended: safe amount is 0.0 USD.
+request_246,64086.0,affordable_with_plan,installments,2026-04-03:22216.48|2026-05-03:22216.48|2026-06-02:22216.48,2026-04-03,none,Installments recommended: safe amount is 64086.0 ZAR.
+request_247,1059.3,affordable_now,full_payment,2024-09-05:1059.3,2024-09-05,none,Full Payment recommended: safe amount is 1059.3 EUR.
+request_248,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_249,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
+request_250,17830.39,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 17830.39 ZAR.
+request_251,348.91,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 348.91 EUR.
+request_252,6206397.52,affordable_later,wait,2026-08-14:28082000,2026-08-14,none,Wait recommended: safe amount is 6206397.52 IDR.
+request_253,1764.4,affordable_with_plan,installments,2024-03-21:984.6|2024-04-21:984.6|2024-05-22:984.6,2024-04-17,none,Installments recommended: safe amount is 1764.4 EUR.
+request_254,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 USD.
 request_255,3345000.0,affordable_now,full_payment,2026-04-06:3345000,2026-04-06,none,Full Payment recommended: safe amount is 3345000.0 IDR.
-request_256,12083.28,not_affordable,not_recommended,none,,stop:event_23486,Not Recommended recommended: safe amount is 12083.28 INR.
-request_257,812.66,affordable_later,wait,2025-11-14:1352.4,2025-11-14,reduce_to:event_23591:24.0|stop:event_23590,Wait recommended: safe amount is 812.66 USD. Available spending changes: reduce_to:event_23591:24.0|stop:event_23590.
-request_258,1113.59,affordable_with_plan,partial_payment,2026-01-07:1113.59|2026-01-07:0.01,2026-01-07,stop:event_23715,Partial Payment recommended: safe amount is 1113.59 USD. Available spending changes: stop:event_23715.
-request_259,529.29,affordable_later,wait,2024-09-14:935,2024-09-14,stop:event_23823,Wait recommended: safe amount is 529.29 EUR. Available spending changes: stop:event_23823.
-request_260,11644981.61,affordable_with_plan,partial_payment,2025-02-06:11644981.61|2025-04-15:40434018.39,2025-04-15,reduce_to:event_23895:478040.0|reduce_to:event_23896:325850.0,Partial Payment recommended: safe amount is 11644981.61 IDR. Available spending changes: reduce_to:event_23895:478040.0|reduce_to:event_23896:325850.0.
-request_261,1830.4,affordable_now,full_payment,2026-07-03:1830.4,2026-07-03,stop:event_24010,Full Payment recommended: safe amount is 1830.4 EUR. Available spending changes: stop:event_24010.
-request_262,0.0,not_affordable,not_recommended,none,,reduce_to:event_24094:541500.0|stop:event_24095,Not Recommended recommended: safe amount is 0.0 IDR.
-request_263,10850.9,not_affordable,not_recommended,none,,reduce_to:event_24201:506.0|stop:event_24200|stop:event_24199,Not Recommended recommended: safe amount is 10850.9 ZAR.
-request_264,26950.55,affordable_later,wait,2026-05-14:111300,2026-05-14,reduce_to:event_24313:1504.0|stop:event_24312,Wait recommended: safe amount is 26950.55 INR. Available spending changes: reduce_to:event_24313:1504.0|stop:event_24312.
-request_265,45970.0,affordable_now,full_payment,2024-03-06:45970,2024-03-06,stop:event_24385|stop:event_24384|stop:event_24383,Full Payment recommended: safe amount is 45970.0 INR. Available spending changes: stop:event_24385|stop:event_24384|stop:event_24383.
+request_256,12083.28,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 12083.28 INR.
+request_257,812.66,affordable_later,wait,2025-11-14:1352.4,2025-11-14,none,Wait recommended: safe amount is 812.66 USD.
+request_258,1113.59,affordable_with_plan,partial_payment,2026-01-07:1113.59|2026-01-07:0.01,2026-01-07,none,Partial Payment recommended: safe amount is 1113.59 USD.
+request_259,529.29,affordable_later,wait,2024-09-14:935,2024-09-14,none,Wait recommended: safe amount is 529.29 EUR.
+request_260,11644981.61,affordable_with_plan,partial_payment,2025-02-06:11644981.61|2025-04-15:40434018.39,2025-04-15,none,Partial Payment recommended: safe amount is 11644981.61 IDR.
+request_261,1830.4,affordable_now,full_payment,2026-07-03:1830.4,2026-07-03,none,Full Payment recommended: safe amount is 1830.4 EUR.
+request_262,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 IDR.
+request_263,10850.9,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 10850.9 ZAR.
+request_264,26950.55,affordable_later,wait,2026-05-14:111300,2026-05-14,none,Wait recommended: safe amount is 26950.55 INR.
+request_265,45970.0,affordable_now,full_payment,2024-03-06:45970,2024-03-06,none,Full Payment recommended: safe amount is 45970.0 INR.
 request_266,935.0,affordable_with_plan,installments,2025-08-03:324.13|2025-08-31:324.13|2025-09-28:324.13,2025-08-03,none,Installments recommended: safe amount is 935.0 EUR.
-request_267,1871.04,affordable_with_plan,installments,2026-01-08:667.33|2026-02-07:667.33|2026-03-09:667.33,2026-01-14,stop:event_24573,Installments recommended: safe amount is 1871.04 EUR. Available spending changes: stop:event_24573.
-request_268,1134.52,affordable_with_plan,installments,2024-06-14:841.22|2024-07-15:841.22|2024-08-15:841.22,2024-07-14,stop:event_24680,Installments recommended: safe amount is 1134.52 EUR. Available spending changes: stop:event_24680.
-request_269,0.0,not_affordable,not_recommended,none,,stop:event_24744,Not Recommended recommended: safe amount is 0.0 ZAR.
-request_270,239.63,not_affordable,not_recommended,none,,reduce_to:event_24845:23.0,Not Recommended recommended: safe amount is 239.63 USD.
-request_271,0.0,not_affordable,not_recommended,none,,reduce_to:event_24927:1616.0|reduce_to:event_24990:1335.0|stop:event_24925,Not Recommended recommended: safe amount is 0.0 INR.
-request_272,0.0,affordable_with_plan,installments,2025-02-12:4709466.67|2025-03-12:4709466.67|2025-04-09:4709466.67,,stop:event_25031,Installments recommended: safe amount is 0.0 IDR. Available spending changes: stop:event_25031.
-request_273,10760387.87,affordable_with_plan,partial_payment,2026-04-07:10760387.87|2026-04-14:5100612.13,2026-04-14,stop:event_25103|stop:event_25102,Partial Payment recommended: safe amount is 10760387.87 IDR. Available spending changes: stop:event_25103|stop:event_25102.
-request_274,2681.26,affordable_with_plan,installments,2024-12-04:940.75|2025-01-04:940.75|2025-02-04:940.75,2024-12-16,stop:event_25180|stop:event_25179,Installments recommended: safe amount is 2681.26 EUR. Available spending changes: stop:event_25180|stop:event_25179.
-request_275,15884000.0,affordable_now,full_payment,2025-05-06:15884000,2025-05-06,stop:event_25300,Full Payment recommended: safe amount is 15884000.0 IDR. Available spending changes: stop:event_25300.
+request_267,1871.04,affordable_with_plan,installments,2026-01-08:667.33|2026-02-07:667.33|2026-03-09:667.33,2026-01-14,none,Installments recommended: safe amount is 1871.04 EUR.
+request_268,1134.52,affordable_with_plan,installments,2024-06-14:841.22|2024-07-15:841.22|2024-08-15:841.22,2024-07-14,none,Installments recommended: safe amount is 1134.52 EUR.
+request_269,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 ZAR.
+request_270,239.63,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 239.63 USD.
+request_271,0.0,not_affordable,not_recommended,none,,none,Not Recommended recommended: safe amount is 0.0 INR.
+request_272,0.0,affordable_with_plan,installments,2025-02-12:4709466.67|2025-03-12:4709466.67|2025-04-09:4709466.67,,none,Installments recommended: safe amount is 0.0 IDR.
+request_273,10760387.87,affordable_with_plan,partial_payment,2026-04-07:10760387.87|2026-04-14:5100612.13,2026-04-14,none,Partial Payment recommended: safe amount is 10760387.87 IDR.
+request_274,2681.26,affordable_with_plan,installments,2024-12-04:940.75|2025-01-04:940.75|2025-02-04:940.75,2024-12-16,none,Installments recommended: safe amount is 2681.26 EUR.
+request_275,15884000.0,affordable_now,full_payment,2025-05-06:15884000,2025-05-06,none,Full Payment recommended: safe amount is 15884000.0 IDR.

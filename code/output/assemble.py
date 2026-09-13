@@ -169,10 +169,19 @@ def build_output_row(request_id: str, tables: "dict | None" = None) -> dict:
     else:
         earliest_date_str = ""
 
-    # (11): spending_changes_needed reports the changes that were
-    # selected/simulated regardless of which plan won -- informative even
-    # when the winning plan did not strictly need them.
-    spending_changes_str = "|".join(spending_changes) if spending_changes else "none"
+    # (11): spending_changes_needed reports the changes only when the
+    # WINNING plan actually depends on them (selected_plan.requires_spending_changes
+    # is True) -- per problem_statement.md, this field lists flexible
+    # expenses that "must be" stopped or reduced for the recommendation to
+    # hold. A spending-change candidate can be computed and simulated
+    # without ever being selected (e.g. the raw, unadjusted plan was
+    # already safe), and in that case reporting it here would falsely
+    # claim the change is required.
+    spending_changes_str = (
+        "|".join(spending_changes)
+        if spending_changes and selected_plan.requires_spending_changes
+        else "none"
+    )
 
     # (12): amount_safe_to_pay rounded to 2 decimals, defensively
     # re-clipped to [0, requested_amount] (belt-and-suspenders against any
