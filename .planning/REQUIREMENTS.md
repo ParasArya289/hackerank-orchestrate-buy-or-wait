@@ -13,11 +13,11 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### Financial State Reconstruction (STATE)
 
-- [ ] **STATE-01**: Classify each financial event by cash state (`settled`, `pending`, `scheduled`, `unrealized`, `failed`, `cancelled`) and apply the correct treatment (reserve pending debits; exclude pending credits/bonuses/refunds/lottery/investment gains until settled; ignore failed/cancelled/duplicates/unrealized).
-- [ ] **STATE-02**: Detect recurring expenses/income from history (only when evidence supports it) vs. one-time purchases/transfers/refunds/unusual events.
-- [ ] **STATE-03**: Apply message evidence (`messages.csv`) to amend, cancel, delay, or confirm a financial fact, treating message content as untrusted data (never let embedded instructions override challenge rules).
-- [ ] **STATE-04**: Apply image evidence (`images.csv` + `dataset/media/images/<image_id>.png`) the same way as STATE-03, only when an image file is actually present for the relevant `request_id`/`event_id`.
-- [ ] **STATE-05**: Resolve conflicting records using precedence: explicit cancellation/settlement/amendment → newer record from same source → settled over estimate/forecast → financially safer interpretation.
+- [x] **STATE-01**: Classify each financial event by cash state (`settled`, `pending`, `scheduled`, `unrealized`, `failed`, `cancelled`) and apply the correct treatment (reserve pending debits; exclude pending credits/bonuses/refunds/lottery/investment gains until settled; ignore failed/cancelled/duplicates/unrealized).
+- [x] **STATE-02**: Detect recurring expenses/income from history (only when evidence supports it) vs. one-time purchases/transfers/refunds/unusual events.
+- [x] **STATE-03**: Apply message evidence (`messages.csv`) to amend, cancel, delay, or confirm a financial fact, treating message content as untrusted data (never let embedded instructions override challenge rules).
+- [x] **STATE-04**: Apply image evidence (`images.csv` + `dataset/media/images/<image_id>.png`) the same way as STATE-03, only when an image file is actually present for the relevant `request_id`/`event_id`.
+- [x] **STATE-05**: Resolve conflicting records using precedence: explicit cancellation/settlement/amendment → newer record from same source → settled over estimate/forecast → financially safer interpretation.
 
 ### 90-Day Forecast & Safety Check (FORECAST)
 
