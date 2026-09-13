@@ -5,11 +5,13 @@ blank, look up the linked row in images.csv (`related_event_id ==
 event_id`), then extract the amount from the linked PNG. A blank amount
 must NEVER be silently treated as 0.
 
-Phase 1 implements the extraction step with a fixed lookup table built by
-manually reading all 16 linked PNGs under dataset/media/images/. Phase 3
-replaces `_extract_amount_from_image`'s internals with a real qwen2.5vl
-Ollama vision call — the call site and function signature are already
-wired so Phase 3 only needs to swap the implementation.
+Phase 1 built a fixed lookup table by manually reading all 16 linked
+PNGs under dataset/media/images/ as a scaffold. Phase 3 makes a REAL
+qwen2.5vl Ollama vision call (code.llm.vision.extract_amount_via_vision)
+the PRIMARY extraction path. The Phase 1 table is retained only as a
+safety-net fallback for these 16 already-hand-verified rows, used only
+if the live model call fails outright or returns an unparseable/
+implausible value -- never as the primary source of truth.
 """
 
 from __future__ import annotations
@@ -72,19 +74,34 @@ _KNOWN_IMAGE_AMOUNTS: dict[str, float] = {
 }
 
 
-# PHASE 3 EXTENSION POINT
 def _extract_amount_from_image(path: str, event_row: pd.Series) -> float:
     """Extract the total amount shown in the linked image.
 
-    Phase 1: looks up a fixed, manually-verified lookup table. Phase 3
-    will replace this implementation with a real qwen2.5vl Ollama vision
-    call against `path`, keeping this exact function signature.
+    Phase 3: primary path is a real qwen2.5vl Ollama vision call
+    (code.llm.vision.extract_amount_via_vision). Falls back to the
+    Phase-1 hand-verified lookup table only if the live call fails or
+    returns an unparseable/implausible value -- a safety net for these
+    16 specific already-verified rows, not the primary source of truth.
+    Raises if neither path resolves a value (never silently defaults to
+    0/None).
     """
     event_id = event_row["event_id"]
+
+    try:
+        from code.llm.vision import extract_amount_via_vision
+
+        value = extract_amount_via_vision(path)
+        if value is not None:
+            return value
+    except Exception:
+        # Ollama unreachable, model not pulled, network hiccup, etc. --
+        # fall through to the hardcoded safety net below.
+        pass
+
     if event_id in _KNOWN_IMAGE_AMOUNTS:
         return _KNOWN_IMAGE_AMOUNTS[event_id]
     raise NotImplementedError(
-        f"Phase 3: wire qwen2.5vl vision call here for {event_id}"
+        f"vision extraction failed for {event_id} and no fallback value exists"
     )
 
 
