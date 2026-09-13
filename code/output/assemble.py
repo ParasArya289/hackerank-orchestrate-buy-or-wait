@@ -156,6 +156,13 @@ def build_output_row(request_id: str, tables: "dict | None" = None) -> dict:
     # "without optional spending changes".
     if affordability_status == "affordable_now":
         earliest_date_str = request_date.strftime("%Y-%m-%d")
+    elif affordability_status == "not_affordable":
+        # not_affordable means the selected plan is not_recommended --
+        # no full payment is ever safe under this user's accepted
+        # payment methods/deadline, so this field must be empty even if
+        # a raw earliest_date_for_full_payment value exists in isolation
+        # (e.g. the user does not accept full_payment at all).
+        earliest_date_str = ""
     elif earliest_date_for_full_payment is not None:
         earliest_date_str = pd.Timestamp(earliest_date_for_full_payment).strftime("%Y-%m-%d")
     else:

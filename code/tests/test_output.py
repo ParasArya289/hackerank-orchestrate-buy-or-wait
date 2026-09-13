@@ -239,6 +239,31 @@ def _synthetic_tables():
     }
 
 
+class TestBuildOutputRowNotAffordableEmptyDate(unittest.TestCase):
+    def test_not_affordable_forces_empty_earliest_date_even_if_raw_date_exists(self):
+        """Regression test (Rule 1 fix): a raw earliest_date_for_full_payment
+        can exist (full_payment would eventually be safe in isolation) while
+        the selected plan is still not_recommended, e.g. because the user's
+        profile does not accept full_payment as a payment method at all. In
+        that case affordability_status is not_affordable and
+        earliest_date_for_full_payment must be the empty string, never the
+        raw date -- per the plan's must_haves truth "not_affordable/
+        never-safe implies earliest_date_for_full_payment is empty"."""
+        tables = _synthetic_tables()
+        # Force the profile to accept nothing usable: no full_payment, no
+        # partial_payment (allows_partial_payment is already "false" in
+        # the fixture), no installments (no payment options supplied) --
+        # so determine_eligible_plans can only ever return the
+        # not_recommended fallback, even though a raw
+        # earliest_date_for_full_payment may exist in isolation.
+        tables["profiles"].at[0, "payment_methods_user_will_consider"] = []
+        row = build_output_row("request_SYN", tables=tables)
+        self.assertEqual(row["affordability_status"], "not_affordable")
+        self.assertEqual(row["recommended_payment_method"], "not_recommended")
+        self.assertEqual(row["payment_plan"], "none")
+        self.assertEqual(row["earliest_date_for_full_payment"], "")
+
+
 class TestBuildOutputRowSyntheticFixture(unittest.TestCase):
     def test_synthetic_fixture_full_pipeline(self):
         tables = _synthetic_tables()
