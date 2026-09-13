@@ -8,8 +8,11 @@ projected recurring occurrences.
 """
 
 from .balance import DailyBalance, project_balance
+from .safety import compute_amount_safe_to_pay, compute_earliest_date_for_full_payment
 
 __all__ = [
     "DailyBalance",
     "project_balance",
+    "compute_amount_safe_to_pay",
+    "compute_earliest_date_for_full_payment",
 ]
