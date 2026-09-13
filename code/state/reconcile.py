@@ -61,12 +61,24 @@ def resolve_conflict(candidates: list[dict]) -> dict:
         pool = candidates
 
     # Step 2: newest record_date among same source_type wins, when dates differ.
+    # Normalize to tz-naive UTC before comparing: message sent_at values
+    # are tz-aware (UTC) while event_date/settlement_date-derived
+    # record_date values are tz-naive -- comparing them directly raises
+    # TypeError. This normalization is comparison-only (does not mutate
+    # any candidate's stored record_date) and only affects *ordering*,
+    # never which candidate's `value` is used.
+    def _normalize_for_compare(raw_date):
+        ts = pd.to_datetime(raw_date)
+        if ts.tzinfo is not None:
+            ts = ts.tz_convert("UTC").tz_localize(None)
+        return ts
+
     dated = [c for c in pool if c.get("record_date") is not None]
     if dated:
-        dates = {pd.to_datetime(c["record_date"]) for c in dated}
+        dates = {_normalize_for_compare(c["record_date"]) for c in dated}
         if len(dates) > 1:
             latest = max(dates)
-            newest = [c for c in dated if pd.to_datetime(c["record_date"]) == latest]
+            newest = [c for c in dated if _normalize_for_compare(c["record_date"]) == latest]
             if len(newest) == 1:
                 return newest[0]
             pool = newest
