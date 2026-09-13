@@ -18,11 +18,11 @@ Plans:
 ### Phase 2: Forecasting Engine & Plan Selection
 **Goal:** Deterministic 90-day balance forecasting, `amount_safe_to_pay`/`earliest_date_for_full_payment` computation, plan eligibility/ranking, and output-row assembly (everything except the natural-language explanation).
 **Requirements:** FORECAST-01, FORECAST-02, FORECAST-03, PLAN-01, PLAN-02, PLAN-03, PLAN-04, OUT-01, OUT-02, OUT-04
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 Plans:
 - [x] 02-01-PLAN.md — 90-day daily balance projection, amount_safe_to_pay/earliest_date_for_full_payment (code/forecast)
 - [x] 02-02-PLAN.md — Plan eligibility, spending-change selection, ranking, payment_plan string building (code/plan)
-- [ ] 02-03-PLAN.md — Per-request output row assembly, affordability_status derivation, full-dataset dry run to dataset/output.csv (code/output)
+- [x] 02-03-PLAN.md — Per-request output row assembly, affordability_status derivation, full-dataset dry run to dataset/output.csv (code/output)
 **Success Criteria:**
 1. For every request in `sample_requests.csv`, the engine's computed `amount_safe_to_pay`, `affordability_status`, `recommended_payment_method`, and `payment_plan` match (or are defensibly close to) the sample's completed columns.
 2. `0 <= amount_safe_to_pay <= requested_amount` holds for 100% of rows in a full-dataset dry run.

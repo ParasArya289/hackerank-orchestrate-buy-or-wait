@@ -3,28 +3,28 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-09-13T07:28:32.902Z"
+last_updated: "2026-09-13T07:37:30.368Z"
 progress:
   total_phases: 4
-  completed_phases: 1
-  total_plans: 6
-  completed_plans: 4
-  percent: 67
+  completed_phases: 2
+  total_plans: 5
+  completed_plans: 5
+  percent: 50
 ---
 
 # STATE.md
 
 ## Current Position
 
-**Phase:** 2 — Forecasting Engine & Plan Selection (02-01/02-02 complete, 02-03 ready)
-**Next action:** Execute Phase 2 Plan 3 — `/gsd:execute-phase 02` (continues to 02-03-PLAN.md)
+**Phase:** 2 — Forecasting Engine & Plan Selection — COMPLETE (3/3 plans)
+**Next action:** Begin Phase 3 (LLM Integration, Local Ollama) — `/gsd:plan-phase 03` or `/gsd:execute-phase 03`
 
 ## Phase Status
 
 | Phase | Status |
 |---|---|
 | 1. Data Layer & Financial State Reconstruction | Complete (2/2 plans) |
-| 2. Forecasting Engine & Plan Selection | In progress (2/3 plans executed) |
+| 2. Forecasting Engine & Plan Selection | Complete (3/3 plans) |
 | 3. LLM Integration (Local Ollama) | Not started |
 | 4. Full-Dataset Run, Packaging & Submission Prep | Not started |
 
@@ -44,6 +44,8 @@ progress:
 - `select_spending_changes` checks `expense_categories_to_protect` before flexibility/willingness/recurrence, and requires `financial_state.recurrence[category].is_recurring is True` (not merely a flexible label) — a one-time flexible purchase is never an eligible spending-change candidate, per problem_statement.md "Only recurring expenses marked as flexible may be changed" (02-02).
 - `apply_spending_changes_to_state` deep-copies `FinancialState.recurrence` before patching (stop sets `is_recurring=False`, `reduce_to` sets `typical_amount`), so a simulated spending-change never mutates the original `FinancialState` (02-02).
 - `rank_plans` implements the documented 6-step precedence as one explicit `sorted()` tuple key; `build_payment_plan_string` rounds-then-strips-zeros rather than using Python's `:g` format, which switches to scientific notation for large amounts like `15952906.67` (02-02).
+- `derive_affordability_status` maps a `full_payment` `CandidatePlan` with `requires_spending_changes=True` to `affordable_with_plan` (not `affordable_now`), per problem_statement.md's `affordable_with_plan` definition; `build_output_row` always reports the raw (pre-spending-change) `amount_safe_to_pay`/`earliest_date_for_full_payment` in the output row, with changes-adjusted values only ever feeding `determine_eligible_plans` (02-03).
+- `build_output_row` forces `earliest_date_for_full_payment` to the empty string whenever `affordability_status == "not_affordable"`, even if a raw earliest-date value exists in isolation (e.g. a user profile that does not accept `full_payment` at all) — fixed a bug affecting 8/250 rows in the first full-dataset run (02-03).
 
 ## Notes
 
@@ -54,4 +56,5 @@ progress:
 - `code/state` package complete and tested (19/19 unittest passing, 31/31 combined with dataio): cash-state classification, recurrence detection, message/image amendment extraction, conflict resolution, `build_financial_state(request_id)`. Verified against all 250 requests.csv rows with zero exceptions. See `.planning/phases/01-data-layer-financial-state-reconstruction/01-02-SUMMARY.md`.
 - `code/forecast` package complete and tested (10/10 unittest passing, 41/41 combined with dataio+state): `project_balance` (90-day daily balance projection), `compute_amount_safe_to_pay`, `compute_earliest_date_for_full_payment`. Verified against all 250 requests.csv rows with zero exceptions and the `0 <= amount_safe_to_pay <= requested_amount` invariant holding on every row. See `.planning/phases/02-forecasting-engine-plan-selection/02-01-SUMMARY.md`.
 - `code/plan` package complete and tested (24/24 unittest passing, 65/65 combined with dataio+state+forecast): `determine_eligible_plans`/`CandidatePlan` (PLAN-01, including changes-adjusted full_payment eligibility), `select_spending_changes`/`apply_spending_changes_to_state`/`recompute_safety_with_changes` (PLAN-04), `rank_plans`/`select_best_plan`/`build_payment_plan_string` (PLAN-02/PLAN-03). See `.planning/phases/02-forecasting-engine-plan-selection/02-02-SUMMARY.md`.
-- Phase 1 complete. Phase 2 Plans 1 (forecasting engine) and 2 (plan eligibility/ranking) complete. Plan 02-03 (output assembly) ready for execution — see `.planning/phases/02-forecasting-engine-plan-selection/`.
+- `code/output` package complete and tested (8/8 unittest passing, 73/73 combined with dataio+state+forecast+plan): `build_output_row`/`derive_affordability_status` (single-request pipeline assembly) and `run_all_requests`/`write_output_csv` (full-dataset run and writer). `dataset/output.csv` regenerated with 250 real rows, exact column order, zero invariant violations (0 <= amount_safe_to_pay <= requested_amount, valid enum membership for affordability_status/recommended_payment_method for all rows). See `.planning/phases/02-forecasting-engine-plan-selection/02-03-SUMMARY.md`.
+- Phase 1 complete. Phase 2 complete (3/3 plans: forecasting engine, plan eligibility/ranking, output assembly). `dataset/output.csv` has real deterministic predictions for all 250 requests with a placeholder `decision_explanation` marked for Phase 3's LLM replacement. Next: Phase 3 (LLM Integration, Local Ollama).

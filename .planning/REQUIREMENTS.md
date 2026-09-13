@@ -34,10 +34,10 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### Output Generation (OUT)
 
-- [ ] **OUT-01**: Produce one output row per `request_id` in `dataset/requests.csv`, with exact column order: `request_id,amount_safe_to_pay,affordability_status,recommended_payment_method,payment_plan,earliest_date_for_full_payment,spending_changes_needed,decision_explanation`.
-- [ ] **OUT-02**: Enforce `0 <= amount_safe_to_pay <= requested_amount` and all other output-contract invariants (e.g., `affordable_now` ⇒ `earliest_date_for_full_payment == request_date`).
+- [x] **OUT-01**: Produce one output row per `request_id` in `dataset/requests.csv`, with exact column order: `request_id,amount_safe_to_pay,affordability_status,recommended_payment_method,payment_plan,earliest_date_for_full_payment,spending_changes_needed,decision_explanation`.
+- [x] **OUT-02**: Enforce `0 <= amount_safe_to_pay <= requested_amount` and all other output-contract invariants (e.g., `affordable_now` ⇒ `earliest_date_for_full_payment == request_date`).
 - [ ] **OUT-03**: Generate a concise, grounded `decision_explanation` per row (local LLM prose layered over deterministic facts — never invents numbers not in the computed plan).
-- [ ] **OUT-04**: Write final predictions to `dataset/output.csv`, overwriting the blank template.
+- [x] **OUT-04**: Write final predictions to `dataset/output.csv`, overwriting the blank template.
 
 ### Tooling & Submission (SUB)
 
