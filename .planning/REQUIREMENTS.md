@@ -27,10 +27,10 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### Plan Selection & Ranking (PLAN)
 
-- [ ] **PLAN-01**: Determine plan eligibility: immediate methods (`full_payment`/`partial_payment`/`installments`) require membership in `payment_methods_user_will_consider`; `installments` additionally must respect `max_installment_months`; `wait` requires future full-payment safety AND `full_payment` acceptance; `not_recommended` is the fallback.
-- [ ] **PLAN-02**: When multiple safe eligible plans exist, rank by: (1) completes by `desired_completion_date`, (2) no spending changes required, (3) minimizes total amount paid, (4) starts earliest, (5) fewest payments, (6) lowest `payment_option_id` as final tie-break.
-- [ ] **PLAN-03**: Build valid `payment_plan` strings: partial-payment is exactly two legs (`amount_safe_to_pay` on `request_date`, remainder on `earliest_date_for_full_payment`, summing to `requested_amount`, second leg ≤ `desired_completion_date`); installment plans must exactly reproduce a row from `request_payment_options.csv`.
-- [ ] **PLAN-04**: Select up to 3 `spending_changes_needed` actions (`stop:<event_id>` / `reduce_to:<event_id>:<new_amount>`), only on non-protected, flexible, user-permitted categories; stop and reduce must never target the same event.
+- [x] **PLAN-01**: Determine plan eligibility: immediate methods (`full_payment`/`partial_payment`/`installments`) require membership in `payment_methods_user_will_consider`; `installments` additionally must respect `max_installment_months`; `wait` requires future full-payment safety AND `full_payment` acceptance; `not_recommended` is the fallback.
+- [x] **PLAN-02**: When multiple safe eligible plans exist, rank by: (1) completes by `desired_completion_date`, (2) no spending changes required, (3) minimizes total amount paid, (4) starts earliest, (5) fewest payments, (6) lowest `payment_option_id` as final tie-break.
+- [x] **PLAN-03**: Build valid `payment_plan` strings: partial-payment is exactly two legs (`amount_safe_to_pay` on `request_date`, remainder on `earliest_date_for_full_payment`, summing to `requested_amount`, second leg ≤ `desired_completion_date`); installment plans must exactly reproduce a row from `request_payment_options.csv`.
+- [x] **PLAN-04**: Select up to 3 `spending_changes_needed` actions (`stop:<event_id>` / `reduce_to:<event_id>:<new_amount>`), only on non-protected, flexible, user-permitted categories; stop and reduce must never target the same event.
 
 ### Output Generation (OUT)
 

@@ -3,28 +3,28 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-09-13T07:20:24.490Z"
+last_updated: "2026-09-13T07:28:32.902Z"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 5
-  completed_plans: 3
-  percent: 60
+  total_plans: 6
+  completed_plans: 4
+  percent: 67
 ---
 
 # STATE.md
 
 ## Current Position
 
-**Phase:** 2 — Forecasting Engine & Plan Selection (02-01 complete, 02-02/02-03 ready)
-**Next action:** Execute Phase 2 Plan 2 — `/gsd:execute-phase 02` (continues to 02-02-PLAN.md)
+**Phase:** 2 — Forecasting Engine & Plan Selection (02-01/02-02 complete, 02-03 ready)
+**Next action:** Execute Phase 2 Plan 3 — `/gsd:execute-phase 02` (continues to 02-03-PLAN.md)
 
 ## Phase Status
 
 | Phase | Status |
 |---|---|
 | 1. Data Layer & Financial State Reconstruction | Complete (2/2 plans) |
-| 2. Forecasting Engine & Plan Selection | In progress (1/3 plans executed) |
+| 2. Forecasting Engine & Plan Selection | In progress (2/3 plans executed) |
 | 3. LLM Integration (Local Ollama) | Not started |
 | 4. Full-Dataset Run, Packaging & Submission Prep | Not started |
 
@@ -40,6 +40,10 @@ progress:
 - Phase 2's `determine_eligible_plans` computes eligibility twice — once from the raw forecast, once from a spending-changes-adjusted forecast (`apply_spending_changes_to_state` + `recompute_safety_with_changes`) — so `affordable_with_plan` via permitted spending changes is reachable and `requires_spending_changes` is a real (not hardcoded) discriminator in `rank_plans`' tie-break rule 2 (02-planning).
 - `project_balance` reads a recurring category's sign from the `direction` column of its most recent settled row (not an amount-delta), matching `recurrence.py`'s recent-window amount-stability design so a step change (raise/rent increase) still forecasts at the correct sign and new level; recurring categories are fully excluded from the one-time event pass (their historical rows already fed `typical_amount`/`interval_days`) with an explicit per-date guard against double-counting a concrete row landing on a projected occurrence date (02-01).
 - `compute_amount_safe_to_pay` is computed analytically (`min(daily_balances) - minimum_balance_to_keep`, clipped to `[0, requested_amount]`, floored to 2 decimals) rather than by brute-force search, enforcing the `0 <= amount_safe_to_pay <= requested_amount` invariant at the source (02-01).
+- `determine_eligible_plans` tries the raw safety numbers first for `full_payment` and only falls back to changes-adjusted numbers if raw did not already qualify — never adds the same method twice, so a raw-safe candidate always strictly dominates an adjusted-safe one (02-02).
+- `select_spending_changes` checks `expense_categories_to_protect` before flexibility/willingness/recurrence, and requires `financial_state.recurrence[category].is_recurring is True` (not merely a flexible label) — a one-time flexible purchase is never an eligible spending-change candidate, per problem_statement.md "Only recurring expenses marked as flexible may be changed" (02-02).
+- `apply_spending_changes_to_state` deep-copies `FinancialState.recurrence` before patching (stop sets `is_recurring=False`, `reduce_to` sets `typical_amount`), so a simulated spending-change never mutates the original `FinancialState` (02-02).
+- `rank_plans` implements the documented 6-step precedence as one explicit `sorted()` tuple key; `build_payment_plan_string` rounds-then-strips-zeros rather than using Python's `:g` format, which switches to scientific notation for large amounts like `15952906.67` (02-02).
 
 ## Notes
 
@@ -49,4 +53,5 @@ progress:
 - `code/dataio` package complete and tested (12/12 unittest passing): loaders, fx conversion, blank-amount resolution, `build_request_bundle()`. See `.planning/phases/01-data-layer-financial-state-reconstruction/01-01-SUMMARY.md`.
 - `code/state` package complete and tested (19/19 unittest passing, 31/31 combined with dataio): cash-state classification, recurrence detection, message/image amendment extraction, conflict resolution, `build_financial_state(request_id)`. Verified against all 250 requests.csv rows with zero exceptions. See `.planning/phases/01-data-layer-financial-state-reconstruction/01-02-SUMMARY.md`.
 - `code/forecast` package complete and tested (10/10 unittest passing, 41/41 combined with dataio+state): `project_balance` (90-day daily balance projection), `compute_amount_safe_to_pay`, `compute_earliest_date_for_full_payment`. Verified against all 250 requests.csv rows with zero exceptions and the `0 <= amount_safe_to_pay <= requested_amount` invariant holding on every row. See `.planning/phases/02-forecasting-engine-plan-selection/02-01-SUMMARY.md`.
-- Phase 1 complete. Phase 2 Plan 1 (forecasting engine) complete. Plans 02-02 (plan eligibility/ranking) and 02-03 (output assembly) ready for execution — see `.planning/phases/02-forecasting-engine-plan-selection/`.
+- `code/plan` package complete and tested (24/24 unittest passing, 65/65 combined with dataio+state+forecast): `determine_eligible_plans`/`CandidatePlan` (PLAN-01, including changes-adjusted full_payment eligibility), `select_spending_changes`/`apply_spending_changes_to_state`/`recompute_safety_with_changes` (PLAN-04), `rank_plans`/`select_best_plan`/`build_payment_plan_string` (PLAN-02/PLAN-03). See `.planning/phases/02-forecasting-engine-plan-selection/02-02-SUMMARY.md`.
+- Phase 1 complete. Phase 2 Plans 1 (forecasting engine) and 2 (plan eligibility/ranking) complete. Plan 02-03 (output assembly) ready for execution — see `.planning/phases/02-forecasting-engine-plan-selection/`.
