@@ -43,6 +43,8 @@ def _events_df(rows: list[dict]) -> pd.DataFrame:
     for row in rows:
         merged = {**defaults, **row}
         built.append(merged)
+    if not built:
+        return pd.DataFrame(columns=list(defaults.keys()))
     df = pd.DataFrame(built)
     df["event_date"] = pd.to_datetime(df["event_date"])
     df["settlement_date"] = pd.to_datetime(df["settlement_date"])
@@ -92,10 +94,12 @@ class TestProjectBalance(unittest.TestCase):
         self.assertAlmostEqual(after, 10000.0 - 5148.0)
 
         # No invented transactions on non-recurrence days: balance should
-        # only ever be 10000.0 or 10000.0 - 5148.0 (single drop) or further
-        # dropped if a second occurrence also falls in-window (2024-03-01).
-        distinct_balances = sorted(set(round(b, 2) for b in by_date.values()))
-        self.assertLessEqual(len(distinct_balances), 3)
+        # only ever be flat at 10000.0 minus some whole number of 5148.0
+        # rent drops (one per recurrence occurrence in-window), never any
+        # other value.
+        distinct_balances = sorted(set(round(b, 2) for b in by_date.values()), reverse=True)
+        for i, balance in enumerate(distinct_balances):
+            self.assertAlmostEqual(balance, 10000.0 - i * 5148.0)
 
     def test_one_time_scheduled_debit_hits_exact_date(self):
         request_date = pd.Timestamp("2024-02-01")
