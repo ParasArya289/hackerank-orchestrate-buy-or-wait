@@ -18,9 +18,9 @@ Plans:
 ### Phase 2: Forecasting Engine & Plan Selection
 **Goal:** Deterministic 90-day balance forecasting, `amount_safe_to_pay`/`earliest_date_for_full_payment` computation, plan eligibility/ranking, and output-row assembly (everything except the natural-language explanation).
 **Requirements:** FORECAST-01, FORECAST-02, FORECAST-03, PLAN-01, PLAN-02, PLAN-03, PLAN-04, OUT-01, OUT-02, OUT-04
-**Plans:** 0/3 plans complete
+**Plans:** 1/3 plans complete
 Plans:
-- [ ] 02-01-PLAN.md — 90-day daily balance projection, amount_safe_to_pay/earliest_date_for_full_payment (code/forecast)
+- [x] 02-01-PLAN.md — 90-day daily balance projection, amount_safe_to_pay/earliest_date_for_full_payment (code/forecast)
 - [ ] 02-02-PLAN.md — Plan eligibility, spending-change selection, ranking, payment_plan string building (code/plan)
 - [ ] 02-03-PLAN.md — Per-request output row assembly, affordability_status derivation, full-dataset dry run to dataset/output.csv (code/output)
 **Success Criteria:**

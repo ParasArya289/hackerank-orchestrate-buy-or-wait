@@ -21,9 +21,9 @@ Source of truth for scope: `problem_statement.md` + `AGENTS.md` §6. This file b
 
 ### 90-Day Forecast & Safety Check (FORECAST)
 
-- [ ] **FORECAST-01**: Project the user's balance forward 90 days from `request_date` using recurring income/expenses, confirmed future payments, and amended facts from messages/images.
-- [ ] **FORECAST-02**: Compute `amount_safe_to_pay` — the largest amount payable on `request_date` without breaking `minimum_balance_to_keep` at any point in the 90-day forecast, before optional spending changes, capped at `requested_amount`.
-- [ ] **FORECAST-03**: Compute `earliest_date_for_full_payment` — first date the full `requested_amount` passes the safety check without optional spending changes; empty if never within the forecast window.
+- [x] **FORECAST-01**: Project the user's balance forward 90 days from `request_date` using recurring income/expenses, confirmed future payments, and amended facts from messages/images.
+- [x] **FORECAST-02**: Compute `amount_safe_to_pay` — the largest amount payable on `request_date` without breaking `minimum_balance_to_keep` at any point in the 90-day forecast, before optional spending changes, capped at `requested_amount`.
+- [x] **FORECAST-03**: Compute `earliest_date_for_full_payment` — first date the full `requested_amount` passes the safety check without optional spending changes; empty if never within the forecast window.
 
 ### Plan Selection & Ranking (PLAN)
 
