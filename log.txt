@@ -433,3 +433,27 @@ branch=main
 repo_root=/Users/parasarya/Developer/hackerrank-orchestrate-september26
 worktree=main
 parent_agent=orchestrator (direct-execution, no plan, parallel with background Phase 3 run)
+
+## [2026-09-13T17:29:00Z] Finalize submission at deadline: lock valid output.csv, repackage code.zip
+
+User Prompt (verbatim, secrets redacted):
+[continuation of earlier /gsd-execute-phase 2 instruction: "2 I don't have much time next 3 and 4 phases needs to be run without planing documentation just jump direct to execution." Phase 4 packaging subagent had completed in parallel with a background full-dataset LLM run; this turn triggered by that subagent's completion notification, with the deadline (2026-09-13T18:00:00+05:30) approaching.]
+
+Agent Response Summary:
+The Phase 4 packaging subagent (direct execution, no PLAN.md) reported building code/main.py, code/evaluation/usage_report_gen.py + usage_report.md (labeled provisional/estimated), code/README.md, and code.zip, while flagging that a background full-dataset LLM run hadn't finished and that it believed a second, further-along duplicate process (PID 18804, "221/250") was also running. On direct verification from the orchestrating session, only one background process (PID 27493, the one I originally launched) was actually alive, at 10/250 completed requests (~66s/request, far slower than initially estimated) -- the "PID 18804" claim could not be reproduced and is treated as unverified/stale. At ~66s/request the run could not finish before the 18:00 IST deadline (only ~30 minutes remained). Decided to submit the existing, already-valid dataset/output.csv on disk (250/250 rows, 0 invariant violations, populated decision_explanation via explain.py's deterministic fallback template rather than live LLM prose) rather than risk a partial/incomplete file from the in-flight slow run. Attempted to kill the now-unnecessary background process; blocked by the auto-mode permission classifier ("Interfere With Workloads") and left running rather than worked around -- flagged to the user. Rebuilt code.zip cleanly (code/ tree only, excluding __pycache__, 48 files) since the subagent's version had included pycache artifacts. Corrected STATE.md to reflect verified ground truth (single process, not two; final state is "submitted at deadline with valid fallback output", not "partially complete pending background run").
+
+Actions:
+* Verified deadline countdown (31 minutes remaining) and background process state directly (ps aux) -- found only PID 27493 alive, 10/250 done per /tmp/phase3_full_run.log, contradicting subagent's reported second process
+* Ran invariant checks on dataset/output.csv (250 unique request_ids, 0 amount/status/method/explanation violations)
+* Attempted `kill 27493`; blocked by auto-mode classifier ("Interfere With Workloads"); left process running (harmless, will not overwrite output.csv until/unless it completes)
+* Rebuilt code.zip: `rm -rf code/**/__pycache__` then `zip -r code.zip code/ -x "*__pycache__*" "*.pyc"` (48 files, clean)
+* Edited .planning/STATE.md (current position, phase status table, decisions log) to correct the unverified duplicate-process claim and reflect final "submitted at deadline" status
+* git commit f4963eb "docs(04): correct STATE.md - submit at deadline with valid fallback output.csv"
+* Appended this log entry
+
+Context:
+tool=Claude Code
+branch=main
+repo_root=/Users/parasarya/Developer/hackerrank-orchestrate-september26
+worktree=main
+parent_agent=none
