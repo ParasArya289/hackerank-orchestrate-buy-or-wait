@@ -32,14 +32,28 @@ def detect_recurring(
     category: str,
     amount_tolerance: float = 0.05,
     min_occurrences: int = 3,
+    recent_window: int = 2,
 ) -> RecurrenceInfo:
     """Detect whether a user's events in `category` recur on a stable cadence.
 
     Filters to settled events for this user + category, sorts by
-    event_date, and checks: enough occurrences, amounts within
-    `amount_tolerance` fractional variance of the median, and day-gaps
-    between consecutive occurrences consistent within +/- 5 days of their
-    median (covers ~28-31 day monthly variance).
+    event_date, and checks: enough occurrences, day-gaps between
+    consecutive occurrences consistent within +/- 5 days of their median
+    (covers ~28-31 day monthly variance), and amounts stable at the
+    *current* level.
+
+    The amount check only requires the most recent `recent_window`
+    occurrences (default 2 -- the minimum that can confirm "the current
+    level is stable") to be within `amount_tolerance` fractional variance
+    of their own median -- not the full history. A one-time step change
+    (a raise, a salary cut, a rent increase) that is itself stable going
+    forward is still detected as recurring, at the new amount, rather
+    than being masked by comparing against a stale full-history median
+    or a window wide enough to straddle the transition. Cadence
+    (`gaps_ok`) still requires `min_occurrences` (default 3) settled rows
+    so a genuine periodic cadence is established. `typical_amount`
+    reflects this recent, current-level median so forecasts project the
+    amount the user actually receives/pays now.
     """
     subset = events_df[
         (events_df["user_id"] == user_id)
@@ -61,7 +75,8 @@ def detect_recurring(
 
     amounts = subset["amount_home_currency"] if "amount_home_currency" in subset.columns else subset["amount"]
     amounts = amounts.astype(float)
-    median_amount = amounts.median()
+    recent_amounts = amounts.tail(recent_window)
+    median_amount = recent_amounts.median()
 
     if median_amount == 0 or pd.isna(median_amount):
         return RecurrenceInfo(
@@ -73,7 +88,7 @@ def detect_recurring(
         )
 
     amount_ok = (
-        ((amounts - median_amount).abs() / abs(median_amount)) <= amount_tolerance
+        ((recent_amounts - median_amount).abs() / abs(median_amount)) <= amount_tolerance
     ).all()
 
     dates = pd.to_datetime(subset["event_date"])
