@@ -457,3 +457,28 @@ branch=main
 repo_root=/Users/parasarya/Developer/hackerrank-orchestrate-september26
 worktree=main
 parent_agent=none
+
+## [2026-09-13T17:47:00Z] Fix spending_changes_needed bug, main.py import, regenerate output.csv
+
+User Prompt (verbatim, secrets redacted):
+"is our output.csv correct and sanity checked" followed by "kill the job that is running and tell me manual way to run to generate output.csv" followed by [user reported running `nohup python3 code/main.py > /tmp/output_run.log 2>&1 &` and getting `ModuleNotFoundError: No module named 'code.output'; 'code' is not a package`] followed by "I don't have time I need output.csv kill all the jobs and generate this"
+
+Agent Response Summary:
+Ran a real sanity check on dataset/output.csv (structural invariants: bounds, enums, affordable_now/not_affordable date rules, partial_payment two-leg sum/date rules, installments-matches-real-payment-option, spending_changes_needed format) and found a genuine bug: 49/250 rows marked affordable_now also carried non-empty spending_changes_needed, contradicting problem_statement.md's definition ("flexible expenses that must be stopped or reduced" -- i.e. actually required for the recommendation). Root cause: code/output/assemble.py reported select_spending_changes' candidates unconditionally regardless of whether the winning CandidatePlan actually needed them. Fixed by gating on selected_plan.requires_spending_changes. Separately, the user hit a real bug in code/main.py: its own docstring/README claimed `python3 code/main.py` works, but the absolute `from code.output.writer import ...` import only resolves under `python3 -m code.main`, not when run as a bare script -- fixed by inserting the repo root onto sys.path at the top of main.py. When the user said they had no time left, killed all running jobs (a stray leftover full-LLM background process, an in-progress live-Ollama full run, and an in-progress test suite run) and regenerated dataset/output.csv by running the full pipeline with OLLAMA_HOST pointed at an unreachable address, causing every LLM call to fail fast (~0.5s) and fall back to the already-existing deterministic templates/lookup tables in explain.py/interpret.py/vision_stub.py (each already had broad except-and-fallback handling) -- full 250-row run completed in 24 seconds instead of 1.5-4+ hours. Re-ran the full invariant/contract check against the regenerated file: 0 violations (was 49). Committed the fixes and regenerated output.csv, then repackaged code.zip.
+
+Actions:
+* Ran custom invariant/contract-check script against dataset/output.csv (id coverage vs requests.csv, amount bounds, enum membership, affordable_now/not_affordable date rules, partial_payment leg rules, installments-vs-request_payment_options.csv cross-check, spending_changes_needed format, non-empty decision_explanation) -- found 49 affordable_now rows with non-none spending_changes_needed
+* Edited code/output/assemble.py: gated spending_changes_str on selected_plan.requires_spending_changes instead of reporting unconditionally
+* Edited code/main.py: added sys.path.insert(repo_root) so `python3 code/main.py` (script invocation) resolves the same as `python3 -m code.main` (module invocation)
+* Killed all running background jobs (pkill -f "unittest code.tests", pkill -f "run_all_requests", pkill -f "code.main") per explicit user instruction
+* Ran full pipeline via `OLLAMA_HOST="http://127.0.0.1:1" python3 -m code.main` -- fast-fails every LLM call, falls back cleanly, wrote dataset/output.csv (250 rows) in 24s, all invariants passed
+* Re-ran the full contract-check script against the regenerated file: 0 violations
+* git commit be608b2 "fix(04): correct spending_changes_needed leak and main.py script import"
+* Rebuilt code.zip (48 files, code/ tree only, no __pycache__)
+
+Context:
+tool=Claude Code
+branch=main
+repo_root=/Users/parasarya/Developer/hackerrank-orchestrate-september26
+worktree=main
+parent_agent=none
