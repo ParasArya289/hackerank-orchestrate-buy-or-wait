@@ -8,10 +8,22 @@ produces data (Amendment objects) via deterministic regex/keyword
 matching. A message containing an instruction like "ignore the rules"
 matches no defined pattern and returns amendment_type="none".
 
-Phase 1 builds the deterministic extraction scaffold. Phase 3 (per
-ROADMAP.md) routes the actual free-text/image NLU calls to local Ollama
-models (gemma4 for text, qwen2.5vl for vision) -- this module's function
-signatures are the extension point Phase 3 will build on.
+Phase 1 built the deterministic extraction scaffold. Phase 3 adds an LLM
+fallback (code.llm.interpret.classify_ambiguous_message, gemma4) that
+only fires when the deterministic layer found amendment_type == "none"
+-- extract_message_amendment tries deterministic regex/keyword matching
+FIRST, always, and only calls the LLM as a second pass. The LLM's
+output is still just an Amendment (this module's existing dataclass,
+unchanged) with `llm_assisted=True`, `llm_confidence` set, and
+`raw_evidence` preserving the original untrusted text. Critically, the
+existing event_id gating is untouched: an Amendment only ever mutates
+FinancialState when the *message row itself* already carried a
+populated `related_event_id` -- the LLM cannot invent a link to an
+event it wasn't already pointed at, and any resulting amendment still
+flows through code.state.reconcile.resolve_conflict's existing
+precedence like every other candidate. See
+code/tests/test_llm_injection.py for the adversarial-instruction
+regression test that verifies this end-to-end.
 """
 
 from __future__ import annotations
@@ -43,6 +55,8 @@ class Amendment:
     new_amount: float | None
     new_date: str | None
     raw_evidence: str
+    llm_assisted: bool = False
+    llm_confidence: str | None = None
 
 
 def _get(row, key):
@@ -73,11 +87,24 @@ def _parse_amount(raw: str) -> float:
     return float(cleaned)
 
 
-def extract_message_amendment(message_row) -> Amendment:
-    """Extract a deterministic amendment signal from one messages.csv row.
+def extract_message_amendment(message_row, use_llm_fallback: bool = True) -> Amendment:
+    """Extract an amendment signal from one messages.csv row.
 
-    `message_text` is treated strictly as untrusted data: only
-    regex/keyword matching is performed, never eval/exec.
+    Deterministic regex/keyword matching runs FIRST, always. Only when
+    that pass finds nothing (amendment_type == "none") AND
+    `use_llm_fallback` is True AND the message row already carries a
+    populated `related_event_id` (this module never fabricates a new
+    event linkage) does this fall back to gemma4
+    (code.llm.interpret.classify_ambiguous_message) for a second
+    classification pass over the same untrusted text. The LLM path can
+    only ever adjust `amendment_type`/`new_amount` on an Amendment that
+    was already going to target that same, pre-existing event_id --
+    never a different one, and never bypass
+    code.state.reconcile.resolve_conflict's precedence.
+
+    `message_text` is treated strictly as untrusted data in both passes:
+    only regex/keyword matching or a narrowly-scoped, sandboxed LLM
+    classification call is performed, never eval/exec.
     """
     message_id = _get(message_row, "message_id")
     text = _get(message_row, "message_text") or ""
@@ -102,6 +129,25 @@ def extract_message_amendment(message_row) -> Amendment:
         elif any(keyword in text_lower for keyword in _CONFIRM_KEYWORDS):
             amendment_type = "confirm"
 
+    llm_assisted = False
+    llm_confidence: str | None = None
+
+    if amendment_type == "none" and use_llm_fallback and event_id is not None:
+        # Only worth an LLM call when there is a real event_id for the
+        # resulting Amendment to target -- an amendment with no
+        # event_id is structurally inert in build_financial_state, so
+        # skipping the call here is a pure efficiency win, not a
+        # security-relevant gate (the gate itself lives in the check
+        # above and in reconcile.py's amendments_by_event collection).
+        from code.llm.interpret import classify_ambiguous_message
+
+        classification = classify_ambiguous_message(str(text))
+        if classification is not None and classification.amendment_type != "none":
+            amendment_type = classification.amendment_type
+            new_amount = classification.new_amount
+            llm_assisted = True
+            llm_confidence = classification.confidence
+
     return Amendment(
         source="message",
         source_id=message_id,
@@ -110,6 +156,8 @@ def extract_message_amendment(message_row) -> Amendment:
         new_amount=new_amount,
         new_date=new_date,
         raw_evidence=str(text),
+        llm_assisted=llm_assisted,
+        llm_confidence=llm_confidence,
     )
 
 

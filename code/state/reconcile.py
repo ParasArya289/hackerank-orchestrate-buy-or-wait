@@ -142,13 +142,23 @@ def build_financial_state(request_id: str, tables: dict[str, pd.DataFrame] | Non
         amendment = extract_message_amendment(message_row)
         all_amendments.append(amendment)
         if amendment.event_id is not None and amendment.amendment_type != "none":
+            # An LLM-assisted classification only counts as an "explicit
+            # amendment" (resolve_conflict step 1, outright win) at
+            # high/medium confidence. A low-confidence LLM read still
+            # enters the conflict pool (steps 2-4 still apply) but can
+            # never itself short-circuit precedence -- this keeps a
+            # shaky model read from silently overriding a settled,
+            # deterministic record.
+            is_explicit = amendment.amendment_type in ("amend_amount", "cancel")
+            if amendment.llm_assisted and amendment.llm_confidence == "low":
+                is_explicit = False
             amendments_by_event.setdefault(amendment.event_id, []).append(
                 {
                     "amendment": amendment,
                     "value": amendment.new_amount,
                     "source_type": message_row.get("source_type"),
                     "record_date": message_row.get("sent_at"),
-                    "is_explicit_amendment": amendment.amendment_type in ("amend_amount", "cancel"),
+                    "is_explicit_amendment": is_explicit,
                     "direction": None,
                 }
             )

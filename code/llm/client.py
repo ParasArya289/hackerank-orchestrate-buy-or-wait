@@ -41,6 +41,7 @@ class OllamaClient:
     host: str = field(default_factory=lambda: os.environ.get("OLLAMA_HOST", _DEFAULT_HOST))
     timeout_seconds: int = _DEFAULT_TIMEOUT_SECONDS
     usage_log: list[UsageRecord] = field(default_factory=list)
+    _cache: dict = field(default_factory=dict, repr=False)
 
     def generate(
         self,
@@ -53,7 +54,33 @@ class OllamaClient:
         """Call POST /api/generate with a single-turn prompt (optionally
         with base64-encoded images for a vision model). Returns the raw
         text response. Records token usage for later cost reporting.
+
+        Deterministic (temperature=0.0) calls are memoized in-process by
+        (model, prompt, image-count) so re-running the same message/image
+        through the pipeline (e.g. the same message shared by multiple
+        requests for one user, or repeated test invocations) doesn't
+        re-pay the ~20-30s local-model latency. Each cache hit still
+        appends a usage_log record (with duration_seconds=0.0) so the
+        Phase 4 usage report reflects true call counts, not just
+        wall-clock-billed calls.
         """
+        cache_key = None
+        if temperature == 0.0:
+            image_fingerprint = len(images) if images else 0
+            cache_key = (model, prompt, image_fingerprint)
+            if cache_key in self._cache:
+                cached_response, cached_prompt_tokens, cached_completion_tokens = self._cache[cache_key]
+                self.usage_log.append(
+                    UsageRecord(
+                        model=model,
+                        call_type=call_type,
+                        prompt_tokens=cached_prompt_tokens,
+                        completion_tokens=cached_completion_tokens,
+                        duration_seconds=0.0,
+                    )
+                )
+                return cached_response
+
         payload = {
             "model": model,
             "prompt": prompt,
@@ -79,16 +106,24 @@ class OllamaClient:
             ) from exc
         duration = time.time() - t0
 
+        prompt_tokens = int(body.get("prompt_eval_count", 0) or 0)
+        completion_tokens = int(body.get("eval_count", 0) or 0)
+        response_text = str(body.get("response", ""))
+
         self.usage_log.append(
             UsageRecord(
                 model=model,
                 call_type=call_type,
-                prompt_tokens=int(body.get("prompt_eval_count", 0) or 0),
-                completion_tokens=int(body.get("eval_count", 0) or 0),
+                prompt_tokens=prompt_tokens,
+                completion_tokens=completion_tokens,
                 duration_seconds=duration,
             )
         )
-        return str(body.get("response", ""))
+
+        if cache_key is not None:
+            self._cache[cache_key] = (response_text, prompt_tokens, completion_tokens)
+
+        return response_text
 
 
 _default_client: OllamaClient | None = None
